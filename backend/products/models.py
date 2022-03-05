@@ -6,7 +6,13 @@ class Product(models.Model):
     brand = models.CharField(max_length=100, default=None)
     product_details = models.CharField(max_length=500, default=None)
     price = models.IntegerField(default=None)
-    image = models.CharField(max_length=500, default=None)
+    image_right  = models.CharField(max_length=500, default=None)
+    image_left = models.CharField(max_length=500, default=None)
+    image_top = models.CharField(max_length=500, default=None)
+    image_bottom = models.CharField(max_length=500, default=None)
+    image_angle = models.CharField(max_length=500, default=None)
+    image_angle_extra = models.CharField(max_length=500, default=None)
+    release_date = models.DateTimeField(auto_now_add=False, default=None)
     likes = models.ManyToManyField("jwt_auth.User", related_name='product_likes')
 
 

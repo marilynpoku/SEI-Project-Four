@@ -33,4 +33,3 @@ class BrandDetailView(APIView):
         brand = self.get_brand(pk=pk)
         serialized_brand = PopulatedBrandSerializer(brand)
         return Response (serialized_brand.data, status=status.HTTP_200_OK)
-

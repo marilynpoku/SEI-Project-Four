@@ -6,6 +6,7 @@ class Article(models.Model):
     tagline = models.CharField(max_length=100, default=None)
     text = models.CharField(max_length=500, default=None)
     image = models.CharField(max_length=500, default=None)
+    image_extra = models.CharField(max_length=500, default=None)
     created_at = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField("jwt_auth.User", related_name='article_likes')
 
@@ -17,7 +18,7 @@ class Article(models.Model):
     )
 
 
-def __str__(self):
-    return f"{self.title}"
+    def __str__(self):
+        return f"{self.title}"
     
 
