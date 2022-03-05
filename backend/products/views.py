@@ -37,3 +37,4 @@ class ProductDetailView(APIView):
         serialized_product = PopulatedProductSerializer(product)
         return Response (serialized_product.data, status=status.HTTP_200_OK)
 
+
