@@ -19,4 +19,7 @@ class Review(models.Model):
         default='',
     )
 
+    def __str__(self):
+        return f"{self.text}"
+
 
