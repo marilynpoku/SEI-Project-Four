@@ -6,18 +6,15 @@
             "name": "Nike Air Jordan 1",
             "brand": "Nike",
             "product_details": "Inspired by one of the most iconic sneakers of all time, the Air Jordan 1 G is an instant classic. With Air in the heel, a Jumpman on the insole and an integrated traction pattern, it recreates the look of the low-cut original—but gives you everything you need to play 18 holes in comfort.",
-            "price":  115,
-            "image-right": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/8c7779b4-9423-4d17-9f25-04abbffc6ef3/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "image-left": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/50ae403a-8b02-427b-9967-19a0245fa73e/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "image-top": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/62d2d638-c29f-4889-9ff6-79628b09db2f/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "image-bottom": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/3d18a70e-6c50-4cb5-b6a9-52c422e2811e/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "image-angle": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/cb964e78-258b-417e-89a7-c0d58659aa56/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "image-extra": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/b9dd38be-fb0b-41e3-ac16-4f52e42fd58a/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
-            "release-data": "2022/03/24",
+            "price": 115,
+            "image_right": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/8c7779b4-9423-4d17-9f25-04abbffc6ef3/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "image_left": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/50ae403a-8b02-427b-9967-19a0245fa73e/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "image_top": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/62d2d638-c29f-4889-9ff6-79628b09db2f/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "image_bottom": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/3d18a70e-6c50-4cb5-b6a9-52c422e2811e/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "image_angle": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/cb964e78-258b-417e-89a7-c0d58659aa56/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "image_angle_extra": "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,q_80,w_440/b9dd38be-fb0b-41e3-ac16-4f52e42fd58a/air-jordan-1-low-g-golf-shoes-Kl7kx8.png",
+            "release_date": "2022-03-24T08:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -29,18 +26,15 @@
             "name": "550",
             "brand": "New Balance",
             "product_details": "Simple & clean, not overbuilt. We recreated a timeless classic with this tribute to ‘90s pro ballers and the streetwear that defined a hoops generation. Made for the player who knows authenticity.",
-            "price":  110,
-            "image-right": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_02_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-left": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_03_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-top": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_04_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-bottom": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_06_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-angle": "https://fastsole.co.uk/wp-content/uploads/2021/03/New-Balance-550-White-Blue-BB550SN1-on-foot-03.jpg",
-            "image-extra": "https://cdn.sanity.io/images/c1chvb1i/production/8e6ca008497e027d54d2a06613840fb94f84570c-950x720.jpg/New-Balance-550-Blue-Release-Date.jpg",
-            "release-data": "2020/12/01",
+            "price": 110,
+            "image_right": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_02_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_left": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_03_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_top": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_04_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_bottom": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_06_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_angle": "https://fastsole.co.uk/wp-content/uploads/2021/03/New-Balance-550-White-Blue-BB550SN1-on-foot-03.jpg",
+            "image_angle_extra": "https://cdn.sanity.io/images/c1chvb1i/production/8e6ca008497e027d54d2a06613840fb94f84570c-950x720.jpg/New-Balance-550-Blue-Release-Date.jpg",
+            "release_date": "2020-12-01T09:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -52,18 +46,15 @@
             "name": "Ozweego",
             "brand": "Adidas",
             "product_details": "Push the boundaries of throwback style. These adidas OZWEEGO shoes mutate '90s DNA into something entirely new. Show off the high-volume, sculpted shape of this pair with shorts or cropped pants. Extra cushioning keeps you comfortable from dawn to dusk (or beyond).",
-            "price":  90,
-            "image-right": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/04c768e54ae4492792cbadf000b5ab1a_9366/OZWEEGO_Shoes_Beige_GY6177_01_standard.jpg",
-            "image-left": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8af52ed473e74f29af9badf000b5b34b_9366/OZWEEGO_Shoes_Beige_GY6177_06_standard.jpg",
-            "image-top": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1b91aa818e3f4d76bd2cadf000b5bb6b_9366/OZWEEGO_Shoes_Beige_GY6177_02_standard_hover.jpg",
-            "image-bottom": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/eab09b8c138f49adbaefadf000b5c386_9366/OZWEEGO_Shoes_Beige_GY6177_03_standard.jpg",
-            "image-angle": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0dc1a6569b74f82b2adadf000ba8500_9366/OZWEEGO_Shoes_Beige_GY6177_41_detail.jpg",
-            "image-extra": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f1f95df21418450481aeadf000ba8fb8_9366/OZWEEGO_Shoes_Beige_GY6177_42_detail.jpg",
-            "release-data": "2020/09/28",
+            "price": 90,
+            "image_right": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/04c768e54ae4492792cbadf000b5ab1a_9366/OZWEEGO_Shoes_Beige_GY6177_01_standard.jpg",
+            "image_left": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8af52ed473e74f29af9badf000b5b34b_9366/OZWEEGO_Shoes_Beige_GY6177_06_standard.jpg",
+            "image_top": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1b91aa818e3f4d76bd2cadf000b5bb6b_9366/OZWEEGO_Shoes_Beige_GY6177_02_standard_hover.jpg",
+            "image_bottom": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/eab09b8c138f49adbaefadf000b5c386_9366/OZWEEGO_Shoes_Beige_GY6177_03_standard.jpg",
+            "image_angle": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0dc1a6569b74f82b2adadf000ba8500_9366/OZWEEGO_Shoes_Beige_GY6177_41_detail.jpg",
+            "image_angle_extra": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f1f95df21418450481aeadf000ba8fb8_9366/OZWEEGO_Shoes_Beige_GY6177_42_detail.jpg",
+            "release_date": "2020-09-28T09:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -74,19 +65,16 @@
         "fields": {
             "name": "Yeezy Boost 700 Wave Runner",
             "brand": "Yeezy",
-            "product_details": "Whether you are a critic or a fan, there is no debating that the inaugural colourway for the Yeezy Boost 700, first released in November 2017 has set a new trend in the trainer world. The amply named ‘OG' has ushered in a new era of oversized trainers, championing a chunky and eye-catching aesthetic. Nicknamed the ‘Wave Runner' this release pays homage to retro 90's stylings moving away from the minimalist silhouettes of previous Yeezys and opting to make a bolder and brasher statement. Promising re-energising comfort with every step, as well as developing a unique new style for anyone who wears it, this shoe is a clear statement that Kanye West is forever ahead of the curve with his releases, and continuously going against the status quo in the footwear scene.",
-            "price":  250,
-            "image-right": "https://laced.imgix.net/products/B75571_rside.jpg?auto=format&fit=crop&w=1680",
-            "image-left": "https://laced.imgix.net/products/B75571_lside.jpg?auto=format&fit=crop&w=1680",
-            "image-top": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yeezyboost700-5-1536865148.jpg",
-            "image-bottom": "https://laced.imgix.net/products/B75571_bottom.jpg?auto=format&fit=crop&w=1680",
-            "image-angle": "https://laced.imgix.net/products/B75571_back.jpg?auto=format&fit=crop&w=1680",
-            "image-extra": "https://images.complex.com/complex/images/fl_lossy,q_auto/c_crop,h_1823,w_2969,x_1283,y_845/v1/uqzmru5glfqzuioispjs/adidas-yeezy-boost-700-wave-runner-b75571-front",
-            "release-data": "2017/11/01",
+            "product_details": "Whether you are a critic or a fan, there is no debating that the inaugural colourway for the Yeezy Boost 700, first released in November 2017 has set a new trend in the trainer world. The amply named ‘OG' has ushered in a new era of oversized trainers, championing a chunky and eye-catching aesthetic. Nicknamed the ‘Wave Runner' this release pays homage to retro 90's stylings moving away from the minimalist silhouettes of previous Yeezys and opting to make a bolder and brasher statement. Promisin",
+            "price": 250,
+            "image_right": "https://laced.imgix.net/products/B75571_rside.jpg?auto=format&fit=crop&w=1680",
+            "image_left": "https://laced.imgix.net/products/B75571_lside.jpg?auto=format&fit=crop&w=1680",
+            "image_top": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yeezyboost700-5-1536865148.jpg",
+            "image_bottom": "https://laced.imgix.net/products/B75571_bottom.jpg?auto=format&fit=crop&w=1680",
+            "image_angle": "https://laced.imgix.net/products/B75571_back.jpg?auto=format&fit=crop&w=1680",
+            "image_angle_extra": "https://images.complex.com/complex/images/fl_lossy,q_auto/c_crop,h_1823,w_2969,x_1283,y_845/v1/uqzmru5glfqzuioispjs/adidas-yeezy-boost-700-wave-runner-b75571-front",
+            "release_date": "2017-11-01T09:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -96,20 +84,17 @@
         "pk": 5,
         "fields": {
             "name": "Track 2.0 Trainers",
-            "brand": "Balenciagaa",
+            "brand": "Balenciaga",
             "product_details": "Time to get back on track. These off-white and black Track.2 Open sneakers in a panelled design from Balenciaga are detailed with a logo to the side and an embossed BB logo to the toe. Ready to step up? Featuring a round toe, a lace-up front fastening, a brand embossed tongue, a pull tab at the rear, a mesh upper, contrasting panels and a ridged rubber sole.",
-            "price":  725,
-            "image-right": "https://balenciaga.dam.kering.com/m/5fe04b32df6cff86/Large-568615W2GN38071_F.jpg?v=3",
-            "image-left": "https://balenciaga.dam.kering.com/m/3b2dcf1645f5e090/Large-568615W2GN38071_A.jpg?v=3",
-            "image-top": "https://balenciaga.dam.kering.com/m/4fa09ba4cbe238e8/Large-568615W2GN38071_E.jpg?v=3",
-            "image-bottom": "https://balenciaga.dam.kering.com/m/710dd26f84081831/Large-568615W2GN38071_B.jpg?v=2",
-            "image-angle": "https://balenciaga.dam.kering.com/m/5b7cf3316c339584/Large-568615W2GN38071_I.jpg?v=3",
-            "image-extra": "https://balenciaga.dam.kering.com/m/4d2299f10c9e8f50/Large-568615W2GN38071_D.jpg?v=3",
-            "release-data": "2019/06/18",
+            "price": 725,
+            "image_right": "https://balenciaga.dam.kering.com/m/5fe04b32df6cff86/Large-568615W2GN38071_F.jpg?v=3",
+            "image_left": "https://balenciaga.dam.kering.com/m/3b2dcf1645f5e090/Large-568615W2GN38071_A.jpg?v=3",
+            "image_top": "https://balenciaga.dam.kering.com/m/4fa09ba4cbe238e8/Large-568615W2GN38071_E.jpg?v=3",
+            "image_bottom": "https://balenciaga.dam.kering.com/m/710dd26f84081831/Large-568615W2GN38071_B.jpg?v=2",
+            "image_angle": "https://balenciaga.dam.kering.com/m/5b7cf3316c339584/Large-568615W2GN38071_I.jpg?v=3",
+            "image_angle_extra": "https://balenciaga.dam.kering.com/m/4d2299f10c9e8f50/Large-568615W2GN38071_D.jpg?v=3",
+            "release_date": "2019-06-18T09:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -118,21 +103,18 @@
         "model": "products.product",
         "pk": 6,
         "fields": {
-            "name": "Comme des Garçons PLAY x Converse canvas high-top trainers",
+            "name": "Comme des Garçons PLAY x Converse canvas",
             "brand": "Comverse",
-            "product_details": "An iconic collaboration between CDG and Converse. The classic Chuck 70s hi-top silhouette has been adorned with the playful CDG bug-eye heart, designed by Filip Pagowski. This iteration comes in a sturdy woven canvas upper in a classic black colourway. ",
-            "price":  130,
-            "image-right": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_M?$PDP_M_ZOOM$",
-            "image-left": "https://img.ssensemedia.com/images/b_white,g_center,f_auto,q_auto:best/212246M237084_3/comme-des-garcons-play-black-converse-edition-half-heart-chuck-70-high-sneakers.jpg",
-            "image-top": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_ALT01?$PDP_M_ZOOM$",
-            "image-bottom": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_ALT04?$PDP_M_ZOOM$",
-            "image-angle": "https://cdn.media.amplience.net/i/office/2170500000_dt2.jpg?$highres$&w=534&h=467&fmt=auto&qlt=default&fmt.jpeg.interlaced=true",
-            "image-extra": "https://cdn.media.amplience.net/i/office/2170500000_dt1.jpg?$highres$&fmt=auto&qlt=default&fmt.jpeg.interlaced=true",
-            "release-data": "2019/03/30",
+            "product_details": "An iconic collaboration between CDG and Converse. The classic Chuck 70s hi-top silhouette has been adorned with the playful CDG bug-eye heart, designed by Filip Pagowski. This iteration comes in a sturdy woven canvas upper in a classic black colourway.",
+            "price": 130,
+            "image_right": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_M?$PDP_M_ZOOM$",
+            "image_left": "https://img.ssensemedia.com/images/b_white,g_center,f_auto,q_auto:best/212246M237084_3/comme-des-garcons-play-black-converse-edition-half-heart-chuck-70-high-sneakers.jpg",
+            "image_top": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_ALT01?$PDP_M_ZOOM$",
+            "image_bottom": "https://images.selfridges.com/is/image/selfridges/R03759080_BLACK_ALT04?$PDP_M_ZOOM$",
+            "image_angle": "https://cdn.media.amplience.net/i/office/2170500000_dt2.jpg?$highres$&w=534&h=467&fmt=auto&qlt=default&fmt.jpeg.interlaced=true",
+            "image_angle_extra": "https://cdn.media.amplience.net/i/office/2170500000_dt1.jpg?$highres$&fmt=auto&qlt=default&fmt.jpeg.interlaced=true",
+            "release_date": "2019-03-30T09:00:00Z",
             "likes": [
-                1
-            ],
-            "reviews" : [
                 1
             ]
         }
@@ -144,19 +126,16 @@
             "name": "Nike Dunk SB Low Chlorophyll",
             "brand": "Nike",
             "product_details": "Take these SBs outside for an action-packed ride. Inspired by the OG Air Max 1 Trainer colourway, this 'Chlorophyll' SB Dunk Low stays true to its roots. A perforated white toe box and underlay is reminiscent of the Air Max 1 Trainer's upper, while smooth black and grey suede overlays and a clean white midsole complete the look. For ultimate comfort during your adventures, a Zoom Air unit in the heel and a padded tongue provide a fit that's made to skate.",
-            "price":  90,
-            "image-right": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/1cce15fd-2514-4685-a320-1e2d7f67f11a/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "image-left": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/00132041-6b2e-4956-b2ab-3afb8ab6e299/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "image-top": "https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/54ac2b12-f7f0-4725-906a-2ac782cee5b0/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "image-bottom": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/71902daf-a711-4132-a61f-012522d87d7d/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "image-angle": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/8e738367-db7f-4363-a2c7-4619707060a7/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "image-extra": "https://static.nike.com/a/images/t_prod,f_auto/w_1920,c_limit/b1f2fdf8-0644-4ffb-9586-c5ad892faa1b/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
-            "release-data": "2022/03/17",
+            "price": 90,
+            "image_right": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/1cce15fd-2514-4685-a320-1e2d7f67f11a/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "image_left": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/00132041-6b2e-4956-b2ab-3afb8ab6e299/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "image_top": "https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/54ac2b12-f7f0-4725-906a-2ac782cee5b0/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "image_bottom": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/71902daf-a711-4132-a61f-012522d87d7d/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "image_angle": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/8e738367-db7f-4363-a2c7-4619707060a7/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "image_angle_extra": "https://static.nike.com/a/images/t_prod,f_auto/w_1920,c_limit/b1f2fdf8-0644-4ffb-9586-c5ad892faa1b/sb-dunk-low-chlorophyll-bq6817-011-release-date.jpg",
+            "release_date": "2022-03-17T09:00:00Z",
             "likes": [
                 1
-            ],
-            "reviews" : [
-                0
             ]
         }
     },
@@ -167,19 +146,16 @@
             "name": "530",
             "brand": "New Balance",
             "product_details": "The 530 is back, and it comes in a range of stunning new colours. Inspired by our classic running shoes, the design is a throwback to the 1990s-2000s, especially the unique ABZORB® footbed. Each version has a breathable mesh upper for freshness and comfort.",
-            "price":  80,
-            "image-right": "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-left": "https://nb.scene7.com/is/image/NB/mr530sg_nb_03_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-top": "https://nb.scene7.com/is/image/NB/mr530sg_nb_04_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-bottom": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_06_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
-            "image-angle": "https://lp.arket.com/app006prod?set=source[/eb/35/eb3525c2a3cf2b5419526fe570cae642b95c73d9.jpg],origin[dam],type[DESCRIPTIVEDETAIL],device[hdpi],quality[80],ImageVersion[2]&call=url[file:/product/main]",
-            "image-extra": "https://d3312htug2rvv.cloudfront.net/img/600/744/resize/productImages/2021/03/4170495/809054b30e6cddd614d85f5691c4fb96.jpeg",
-            "release-data": "2021/02/17",
+            "price": 80,
+            "image_right": "https://nb.scene7.com/is/image/NB/mr530sg_nb_02_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_left": "https://nb.scene7.com/is/image/NB/mr530sg_nb_03_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_top": "https://nb.scene7.com/is/image/NB/mr530sg_nb_04_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_bottom": "https://nb.scene7.com/is/image/NB/bb550sn1_nb_06_i?$pdpflexf2$&fmt=webp&wid=472&hei=472",
+            "image_angle": "https://lp.arket.com/app006prod?set=source[/eb/35/eb3525c2a3cf2b5419526fe570cae642b95c73d9.jpg],origin[dam],type[DESCRIPTIVEDETAIL],device[hdpi],quality[80],ImageVersion[2]&call=url[file:/product/main]",
+            "image_angle_extra": "https://d3312htug2rvv.cloudfront.net/img/600/744/resize/productImages/2021/03/4170495/809054b30e6cddd614d85f5691c4fb96.jpeg",
+            "release_date": "2021-02-17T09:00:00Z",
             "likes": [
                 1
-            ],
-            "reviews" : [
-                0
             ]
         }
     },
@@ -188,44 +164,38 @@
         "pk": 9,
         "fields": {
             "name": "Yeezy 700 V3 Safflower sneakers",
-            "brand": "Yezzy",
+            "brand": "Yeezy",
             "product_details": "The adidas Yeezy 700 V3 ‘Safflower’ showcases a mostly neutral colour scheme in keeping with the Yeezy brand’s signature palette. Subtle hints of colour arrive via yellow striations throughout the monofilament engineered mesh upper, overlaid with a glow-in-the-dark RPU cage that extends from heel to toe. The sneaker’s interior bootie construction is rendered in a contrasting black finish, offering a snug, comfortable fit. A PU encapsulated EVA midsole anchors the streamlined silhouette.",
-            "price":  250,
-            "image-right": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980446_1000.jpg",
-            "image-left": "https://www.klekt.com/_next/image?url=https%3A%2F%2Fprocess.filestackapi.com%2FAazSisOjUQx2TZJQX0PdNz%2Fresize%3Dheight%3A614%2Cwidth%3A900%2Cfit%3Acrop%2Foutput%3Dcompress%3Atrue%2Cquality%3A60%2Cstrip%3Atrue%2Fauto_image%2Fcache%3Dexpiry%3A31536000%2Fhttps%3A%2F%2Fcdn.filestackcontent.com%2FLpEcsXAERZweBzxW286Q&w=1080&q=75",
-            "image-top": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980451_1000.jpg",
-            "image-bottom": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980447_1000.jpg",
-            "image-angle": "https://lp.arket.com/app006prod?set=source[/eb/35/eb3525c2a3cf2b5419526fe570cae642b95c73d9.jpg],origin[dam],type[DESCRIPTIVEDETAIL],device[hdpi],quality[80],ImageVersion[2]&call=url[file:/product/main]",
-            "image-extra": "https://cdn.shopify.com/s/files/1/0255/9429/8467/products/yeezy-700-v3-safflower-g54853_2_kjvtgk_1800x1800.jpg?v=1619457931",
-            "release-data": "2020/11/15",
+            "price": 250,
+            "image_right": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980446_1000.jpg",
+            "image_left": "https://www.klekt.com/_next/image?url=https%3A%2F%2Fprocess.filestackapi.com%2FAazSisOjUQx2TZJQX0PdNz%2Fresize%3Dheight%3A614%2Cwidth%3A900%2Cfit%3Acrop%2Foutput%3Dcompress%3Atrue%2Cquality%3A60%2Cstrip%3Atrue%2Fauto_image%2Fcache%3Dexpiry%3A31536000%2Fhttps%3A%2F%2Fcdn.filestackcontent.com%2FLpEcsXAERZweBzxW286Q&w=1080&q=75",
+            "image_top": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980451_1000.jpg",
+            "image_bottom": "https://cdn-images.farfetch-contents.com/16/10/05/46/16100546_30980447_1000.jpg",
+            "image_angle": "https://lp.arket.com/app006prod?set=source[/eb/35/eb3525c2a3cf2b5419526fe570cae642b95c73d9.jpg],origin[dam],type[DESCRIPTIVEDETAIL],device[hdpi],quality[80],ImageVersion[2]&call=url[file:/product/main]",
+            "image_angle_extra": "https://cdn.shopify.com/s/files/1/0255/9429/8467/products/yeezy-700-v3-safflower-g54853_2_kjvtgk_1800x1800.jpg?v=1619457931",
+            "release_date": "2020-11-15T09:00:00Z",
             "likes": [
                 1
-            ],
-            "reviews" : [
-                0
             ]
         }
     },
     {
         "model": "products.product",
-        "pk": 9,
+        "pk": 10,
         "fields": {
             "name": "Converse x GOLF WANG Chuck 70 Python",
             "brand": "Converse",
-            "product_details": "The first-ever Chuck 70 low top from Tyler, The Creator takes an unexpected approach to the iconic silhouette, channeling his love for exotic prints and luxe fashion. The refined design trades classic canvas for the unique texture of snakeskin printed leather and replaces the traditional white foxing and outsole with a translucent version. The result is a distinct tonal design that allows the vibrant green or blue tones to pop from top to bottom. Converse x GOLF WANG Snake: elevated details and irreverent style that could only come from Tyler, The Creator.",
-            "price":  110,
-            "image-right": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwc13dc854/images/a_107/173189C_A_107X1.jpg?sw=2000",
-            "image-left": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw63788350/images/c_08/173189C_C_08X1.jpg?sw=406",
-            "image-top": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw23f58a45/images/e_08/173189C_E_08X1.jpg?sw=406",
-            "image-bottom": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw99d610e0/images/b_08/173189C_B_08X1.jpg?sw=406",
-            "image-angle": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw84285a42/images/i_08/173189C_I_08X1.jpg?sw=406",
-            "image-extra": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwdb426c38/images/f_107/173189C_F_107X1.jpg?sw=2000",
-            "release-data": "2022/03/04",
+            "product_details": "The first-ever Chuck 70 low top from Tyler, The Creator takes an unexpected approach to the iconic silhouette, channeling his love for exotic prints and luxe fashion. The refined design trades classic canvas for the unique texture of snakeskin printed leather and replaces the traditional white foxing and outsole with a translucent version. The result is a distinct tonal design that allows the vibrant green or blue tones to pop from top to bottom. Converse x GOLF WANG Snake: elevated details and",
+            "price": 110,
+            "image_right": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwc13dc854/images/a_107/173189C_A_107X1.jpg?sw=2000",
+            "image_left": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw63788350/images/c_08/173189C_C_08X1.jpg?sw=406",
+            "image_top": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw23f58a45/images/e_08/173189C_E_08X1.jpg?sw=406",
+            "image_bottom": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw99d610e0/images/b_08/173189C_B_08X1.jpg?sw=406",
+            "image_angle": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dw84285a42/images/i_08/173189C_I_08X1.jpg?sw=406",
+            "image_angle_extra": "https://www.converse.com/dw/image/v2/AALW_PRD/on/demandware.static/-/Sites-ConverseMaster/default/dwdb426c38/images/f_107/173189C_F_107X1.jpg?sw=2000",
+            "release_date": "2022-03-04T09:00:00Z",
             "likes": [
-                0
-            ],
-            "reviews" : [
-                0
+                1
             ]
         }
     }
