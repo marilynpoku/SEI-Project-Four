@@ -4,5 +4,5 @@ from articles.serializers.common import ArticleSerializer
 
 # Serializers
 class PopulatedBrandSerializer(BrandSerializer):
-    related_products = ProductSerializer()
-    related_articles = ArticleSerializer()
+    related_products = ProductSerializer(many=True)
+    related_articles = ArticleSerializer(many=True)

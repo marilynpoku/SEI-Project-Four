@@ -1,0 +1,90 @@
+[
+{
+  "model": "brands.brand",
+  "pk": 1,
+  "fields": {
+    "name": "Nike",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/2880px-Logo_NIKE.svg.png",
+    "related_articles": [
+      2
+    ],
+    "related_products": [
+      1,
+      7
+    ]
+  }
+},
+{
+  "model": "brands.brand",
+  "pk": 2,
+  "fields": {
+    "name": "Adidas",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png",
+    "related_articles": [
+      3
+    ],
+    "related_products": [
+      3
+    ]
+  }
+},
+{
+  "model": "brands.brand",
+  "pk": 3,
+  "fields": {
+    "name": "Converse",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Converse_logo.svg/2560px-Converse_logo.svg.png",
+    "related_articles": [
+      5
+    ],
+    "related_products": [
+      6,
+      10
+    ]
+  }
+},
+{
+  "model": "brands.brand",
+  "pk": 4,
+  "fields": {
+    "name": "Yeezy",
+    "logo": "https://blog.logomyway.com/wp-content/uploads/2021/08/yeezy-logo.png",
+    "related_articles": [
+      4
+    ],
+    "related_products": [
+      9,
+      4
+    ]
+  }
+},
+{
+  "model": "brands.brand",
+  "pk": 5,
+  "fields": {
+    "name": "New Balance",
+    "logo": "https://logos-world.net/wp-content/uploads/2020/09/New-Balance-Logo-1972-2006.png",
+    "related_articles": [
+      6
+    ],
+    "related_products": [
+      8,
+      2
+    ]
+  }
+},
+{
+  "model": "brands.brand",
+  "pk": 6,
+  "fields": {
+    "name": "Balenciaga",
+    "logo": "https://i.pinimg.com/originals/71/3d/3f/713d3fbbcae7235be86ee77a69d073d4.png",
+    "related_articles": [
+      7
+    ],
+    "related_products": [
+      5
+    ]
+  }
+}
+]

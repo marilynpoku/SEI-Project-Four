@@ -5,16 +5,14 @@ class Brand(models.Model):
     name = models.CharField(max_length=50)
     logo = models.CharField(max_length=500)
 
-    related_articles = models.ForeignKey(
+    related_articles = models.ManyToManyField(
         "articles.article",
         related_name = "brands",
-        on_delete= models.CASCADE,
     )
 
-    related_products = models.ForeignKey(
+    related_products = models.ManyToManyField(
         "products.product",
         related_name = "brands",
-        on_delete= models.CASCADE,
     )
 
     def __str__(self):
