@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const SingleProduct = () => {
@@ -6,7 +6,7 @@ const SingleProduct = () => {
     return (
         <>
         </>
-    ) 
+    )
 }
 
 export default SingleProduct
