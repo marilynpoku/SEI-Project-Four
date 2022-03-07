@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Routes, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
 
 
 // Components
@@ -18,22 +18,21 @@ import Register from './components/auth/Register'
 function App() {
 
     return (
-        <>
-        <BrowserRouter>
-        <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/products' element={<Products/>} />
-        <Route path='/products/:id' element={<SingleProduct/>} />
-        <Route path='/brand' element={<Brand/>} />
-        <Route path='/article' element={<Article/>} />
-        <Route path='/profile' element={<Profile/>} />
-        <Route path='/createArticle' element={<CreateArticle/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/register' element={<Register/>} />
-        </Routes>
-        <NavBar/>
-        </BrowserRouter>
-        </>
+
+            <Router>
+                <NavBar/>
+                <Routes>
+                    <Route path='/' element={<Home/>} />
+                    <Route path='/products' element={<Products/>} />
+                    <Route path='/products/:id' element={<SingleProduct/>} />
+                    <Route path='/brand' element={<Brand/>} />
+                    <Route path='/article' element={<Article/>} />
+                    <Route path='/profile' element={<Profile/>} />
+                    <Route path='/createArticle' element={<CreateArticle/>} />
+                    <Route path='/login' element={<Login/>} />
+                    <Route path='/register' element={<Register/>} />
+                </Routes>
+            </Router>
     )
 }
 
