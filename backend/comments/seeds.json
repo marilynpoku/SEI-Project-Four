@@ -1,158 +1,158 @@
 [
-{
-  "model": "comments.comment",
-  "pk": 2,
-  "fields": {
-    "text": "They should make an NFT of it",
-    "created_at": "2022-03-06T13:57:37.262Z",
-    "articles": 2,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 3,
-  "fields": {
-    "text": "I do love this concept though!",
-    "created_at": "2022-03-06T13:57:54.824Z",
-    "articles": 2,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 4,
-  "fields": {
-    "text": "It's looking a bit too distressed for my liking",
-    "created_at": "2022-03-06T13:58:10.742Z",
-    "articles": 3,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 5,
-  "fields": {
-    "text": "distressed look just goes so well with everything",
-    "created_at": "2022-03-06T13:58:28.114Z",
-    "articles": 3,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 6,
-  "fields": {
-    "text": "honestly they're gonna be overrated",
-    "created_at": "2022-03-06T14:00:45.027Z",
-    "articles": 4,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 7,
-  "fields": {
-    "text": "the quality is great though",
-    "created_at": "2022-03-06T14:01:00.570Z",
-    "articles": 4,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 8,
-  "fields": {
-    "text": "it's about time we became more environmentally concious!",
-    "created_at": "2022-03-06T14:01:21.237Z",
-    "articles": 5,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 9,
-  "fields": {
-    "text": "I would get these, the price isnt bad for what youre getting at all",
-    "created_at": "2022-03-06T14:01:36.580Z",
-    "articles": 5,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 10,
-  "fields": {
-    "text": "They look really comfy but the colours are just not a great combo",
-    "created_at": "2022-03-06T14:01:55.630Z",
-    "articles": 6,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 11,
-  "fields": {
-    "text": "I actually love the earthy colour palette right now",
-    "created_at": "2022-03-06T14:02:31.857Z",
-    "articles": 6,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 12,
-  "fields": {
-    "text": "give enough time and we'll have metaverse fashion on the rise. buy the latest digital fashion with crypto, exchange as nfts.",
-    "created_at": "2022-03-06T14:02:53.084Z",
-    "articles": 7,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-},
-{
-  "model": "comments.comment",
-  "pk": 13,
-  "fields": {
-    "text": "great to keep up with the times but the execution is very rough.. the avatars look awful",
-    "created_at": "2022-03-06T14:03:17.257Z",
-    "articles": 7,
-    "owner": 1,
-    "likes": [
-      1
-    ]
-  }
-}
+    {
+        "model": "comments.comment",
+        "pk": 2,
+        "fields": {
+            "text": "They should make an NFT of it",
+            "created_at": "2022-03-06T13:57:37.262Z",
+            "articles": 2,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 3,
+        "fields": {
+            "text": "I do love this concept though!",
+            "created_at": "2022-03-06T13:57:54.824Z",
+            "articles": 2,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 4,
+        "fields": {
+            "text": "It's looking a bit too distressed for my liking",
+            "created_at": "2022-03-06T13:58:10.742Z",
+            "articles": 3,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 5,
+        "fields": {
+            "text": "distressed look just goes so well with everything",
+            "created_at": "2022-03-06T13:58:28.114Z",
+            "articles": 3,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 6,
+        "fields": {
+            "text": "honestly they're gonna be overrated",
+            "created_at": "2022-03-06T14:00:45.027Z",
+            "articles": 4,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 7,
+        "fields": {
+            "text": "the quality is great though",
+            "created_at": "2022-03-06T14:01:00.570Z",
+            "articles": 4,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 8,
+        "fields": {
+            "text": "it's about time we became more environmentally concious!",
+            "created_at": "2022-03-06T14:01:21.237Z",
+            "articles": 5,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 9,
+        "fields": {
+            "text": "I would get these, the price isnt bad for what youre getting at all",
+            "created_at": "2022-03-06T14:01:36.580Z",
+            "articles": 5,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 10,
+        "fields": {
+            "text": "They look really comfy but the colours are just not a great combo",
+            "created_at": "2022-03-06T14:01:55.630Z",
+            "articles": 6,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 11,
+        "fields": {
+            "text": "I actually love the earthy colour palette right now",
+            "created_at": "2022-03-06T14:02:31.857Z",
+            "articles": 6,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 12,
+        "fields": {
+            "text": "give enough time and we'll have metaverse fashion on the rise. buy the latest digital fashion with crypto, exchange as nfts.",
+            "created_at": "2022-03-06T14:02:53.084Z",
+            "articles": 7,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": 13,
+        "fields": {
+            "text": "great to keep up with the times but the execution is very rough.. the avatars look awful",
+            "created_at": "2022-03-06T14:03:17.257Z",
+            "articles": 7,
+            "owner": 1,
+            "likes": [
+                1
+            ]
+        }
+    }
 ]
