@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Heading, Text, Image, Button } from '@chakra-ui/react'
 
 import axios from 'axios'
 
 const Article = () => {
 
-    const [articles, setArticles] = useState([])
+    const [articles, setArticles] = useState('')
+    const [likedBy, setLikedBy] = useState([])
+    const [hasLiked, setHasLiked] = useState(null)
+
 
     const { id } = useParams()
 
@@ -20,19 +24,49 @@ const Article = () => {
             }
         }
         getData()
-    }, [])
+    }, [id])
 
 
     return (
         <section>
-            <h1>articles</h1>
-            <p>article title: {articles.title}</p>
-            <p>article tagline: {articles.tagline}</p>
-            <p>article text: {articles.text}</p>
-            <p>article Image:</p>
-            <img src={articles.image} alt='articleImage'></img>
-            <p>article image_extra:</p>
-            <img src={articles.image_extra} alt='articleimage_extra'></img>
+
+            <Heading size='lg' fontSize='30px' textAlign='center'>{articles.title}</Heading>
+            <Text size='lg' fontSize='20px' textAlign='center'>{articles.tagline}</Text>
+            <Image borderRadius='full' boxSize='100%' src={articles.image} alt='brand logo' />
+            <Text size='sm' fontSize='10px' textAlign='justify'>{articles.text}</Text>
+
+            {/* NEED TO POPULATE ARTICLE, ARTICLE_LIKES COMMENT & COMMENT_LIKES WITH OWNER INFO */}
+            <Text size='sm' fontSize='10px' textAlign='justify'>OWNER: {articles.owner}</Text>
+
+            <Image borderRadius='full' boxSize='100%' src={articles.image_extra} alt='brand logo' />
+
+            <Button className='px-5' colorScheme='red' size={'sm'}> LIKE </Button>
+
+            {articles && (
+
+                <>
+                    <Text>Comments</Text>
+                    {articles.comments.map((comment, index) => {
+                        return (
+                            <>
+                                <Text key={index}>{comment.text}</Text>
+                                <Text>{comment.comment_likes}</Text>
+                            </>
+                        )
+                    })}
+                    {/* 
+                <Text>Articles Likes Here</Text>
+                    {articles.article_likes.map((like, i) => {
+                        return (
+                            <>
+                                <Text key={i}>{like.owner}</Text>
+                            </>
+                        )
+                    })} */}
+                </>
+
+            )}
+
             {/* <p>comments: {articles.comments.map((comment) => {
                 return (
                     <p> {articles.comments.text} </p>

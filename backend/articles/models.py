@@ -8,7 +8,7 @@ class Article(models.Model):
     image = models.CharField(max_length=500, default=None)
     image_extra = models.CharField(max_length=500, default=None)
     created_at = models.DateField(auto_now_add=True)
-    likes = models.ManyToManyField("jwt_auth.User", related_name='article_likes')
+    article_likes = models.ManyToManyField("jwt_auth.User", related_name='article_likes')
 
     owner = models.ForeignKey(
         "jwt_auth.User",

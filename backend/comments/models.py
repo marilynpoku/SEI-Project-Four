@@ -4,7 +4,7 @@ from django.db import models
 class Comment(models.Model):
     text = models.TextField(max_length=300, default=None, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField("jwt_auth.User", related_name='comment_likes')
+    comment_likes = models.ManyToManyField("jwt_auth.User", related_name='comment_likes')
 
     articles = models.ForeignKey(
         "articles.Article",
