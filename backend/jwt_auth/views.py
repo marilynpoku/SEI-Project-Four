@@ -33,7 +33,7 @@ class LoginView(APIView):
     def post(self, request):
         print(request.data)
         try:
-            user_to_login = User.objects.get(email=request.data.get('email'))
+            user_to_login = User.objects.get(username=request.data.get('username'))
         except User.DoesNotExist:
             return PermissionDenied(detail="Unauthorised")
         
@@ -75,5 +75,5 @@ class LoginView(APIView):
             return Response(serialized_user.data, status=status.HTTP_202_ACCEPTED)
         
         except AssertionError as error:
-            return Response({ "detail": str(error) }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response({ "detail": serialized_user.errors }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 

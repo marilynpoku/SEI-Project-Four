@@ -35,7 +35,7 @@ const Article = () => {
             <Image borderRadius='full' boxSize='100%' src={articles.image} alt='brand logo' />
             <Text size='sm' fontSize='10px' textAlign='justify'>{articles.text}</Text>
 
-            {/* NEED TO POPULATE ARTICLE, ARTICLE_LIKES COMMENT & COMMENT_LIKES WITH OWNER INFO */}
+            {/* NEED TO POPULATE ARTICLE, ARTICLE_LIKES, COMMENT & COMMENT_LIKES WITH OWNER INFO */}
             <Text size='sm' fontSize='10px' textAlign='justify'>OWNER: {articles.owner}</Text>
 
             <Image borderRadius='full' boxSize='100%' src={articles.image_extra} alt='brand logo' />
