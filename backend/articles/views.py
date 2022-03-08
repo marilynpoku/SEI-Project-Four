@@ -64,7 +64,7 @@ class ArticleDetailView(APIView):
 # Get single article
     def get(self, _request, pk):
         article = self.get_article(pk=pk)
-        serialized_article = ArticleSerializer(article)
+        serialized_article = PopulatedArticleSerializer(article)
         return Response(serialized_article.data, status=status.HTTP_200_OK)
 
 
