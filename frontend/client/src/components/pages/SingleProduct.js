@@ -6,6 +6,9 @@ import { useParams} from 'react-router-dom'
 import { Container, Heading, Stat, StatNumber} from '@chakra-ui/react'
 import  Button from 'react-bootstrap/Button'
 
+import { BsBagDashFill } from "react-icons/bs";
+<BsBagDashFill/>
+
 
 
 const SingleProduct = () => {

@@ -60,10 +60,11 @@ const Register = () => {
 
     const handleChange = (e) => {
         const newObj = { ...formData, [e.target.name]: e.target.value }
-        console.log('e.target.value', e.target.value)
+        // console.log('e.target.value', e.target.value)
         // console.log('e.target.name', e.target.name )
         setFormData(newObj)
         setFormErrors({ ...formErrors, [e.target.name]: '' })
+        console.log(formErrors)
     }
 
     const handleSubmit = async (e) => {
@@ -72,7 +73,11 @@ const Register = () => {
             await axios.post('/api/auth/register/', formData)
             navigate('/login')
         } catch (error) {
-            setFormErrors({ ...formErrors, ...error.response.data.errors })
+
+            // TWEAKING ERROR MESSAGE -> NOT WORKING
+            console.log({ ...formErrors, [e.target.name]: '' })
+            // setFormErrors()
+            // { ...formErrors, ...error.response.data.errors }
         }
     }
 

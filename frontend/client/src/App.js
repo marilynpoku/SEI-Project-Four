@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, BrowserRouter,  } from 'react-router-dom'
 
 
 // Components
@@ -20,7 +20,6 @@ function App() {
     return (
 
             <Router>
-                <NavBar/>
                 <Routes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/products' element={<Products/>} />
@@ -31,7 +30,9 @@ function App() {
                     <Route path='/createArticle' element={<CreateArticle/>} />
                     <Route path='/login' element={<Login/>} />
                     <Route path='/register' element={<Register/>} />
+                    
                 </Routes>
+                <NavBar />
             </Router>
     )
 }
