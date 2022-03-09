@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # Serializers
 from .serializers.common import ReviewSerializer
+from .serializers.populated import PopulatedReviewSerializer
 
 # Models 
 from .models import Review
@@ -24,7 +25,7 @@ class ReviewListView(APIView):
 
         print("data", request.data)
 
-        serialized_review = ReviewSerializer(data=request.data)
+        serialized_review = PopulatedReviewSerializer(data=request.data)
         try:
             serialized_review.is_valid()
             serialized_review.save()
@@ -75,7 +76,7 @@ class ReviewDetailView(APIView):
         if review_to_update.owner != request.user:
                 raise PermissionDenied(detail="Unauthorised")
 
-        serialized_review = ReviewSerializer(review_to_update, data=request.data)
+        serialized_review = PopulatedReviewSerializer(review_to_update, data=request.data)
         
         try:
             serialized_review.is_valid()
