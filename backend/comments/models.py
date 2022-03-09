@@ -12,10 +12,10 @@ class Comment(models.Model):
         on_delete= models.CASCADE,
     )
 
-    owner = models.ManyToManyField(
+    owner = models.ForeignKey(
         "jwt_auth.User",
         related_name = "comments",
-        # on_delete= models.CASCADE,
+        on_delete= models.CASCADE,
         # default='',
     )
 
