@@ -83,7 +83,7 @@ const Home = () => {
                 {randomArticles && 
                 randomArticles.map((article, i) => {
                     return (
-                        <Link key={i} className='article-link' to={`/articles/${article.id}`}>
+                        <Link key={i} className='article-link' to={`/article/${article.id}`}>
                         <Image src={article.image} alt={article.name}  height='260px'  />
                         <h6 className='text-center'>ARTICLE</h6>
                         <h3 className='text-center'>{article.tagline}</h3>

@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # Serializers
 from .serializers.common import CommentSerializer
+from .serializers.populated import PopulatedCommentSerializer
 
 # Models 
 from .models import Comment
@@ -17,12 +18,19 @@ from .models import Comment
 class CommentListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
+    # # Get all comments
+    # def get(self, _request):
+    #     comments = Comment.objects.all()
+    #     serialized_comments = PopulatedCommentSerializer(comments, many=True)
+
+    #     return Response(serialized_comments.data, status=status.HTTP_200_OK)
+
     # Add comment
     def post(self, request):
 
         request.data["owner"] = request.user.id
 
-        serialized_comment = CommentSerializer(data=request.data)
+        serialized_comment = PopulatedCommentSerializer(data=request.data)
         try:
             serialized_comment.is_valid()
             serialized_comment.save()
@@ -44,11 +52,19 @@ class CommentListView(APIView):
 class CommentDetailView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
+
     def get_comment(self, pk):
         try:
             return Comment.objects.get(pk=pk)
         except Comment.DoesNotExist:
             raise NotFound(detail="Comment not found")
+
+# Get single Comment
+    def get(self, _request, pk):
+        comment = self.get_comment(pk=pk)
+        serialized_comment = PopulatedCommentSerializer(comment)
+        return Response(serialized_comment.data, status=status.HTTP_200_OK)
+
 
     # Delete comment
     def delete(self, request, pk):
@@ -80,7 +96,7 @@ class CommentDetailView(APIView):
         if comment_to_update.owner != request.user:
                 raise PermissionDenied(detail="Unauthorised")
 
-        serialized_comment = CommentSerializer(comment_to_update, data=request.data)
+        serialized_comment = PopulatedCommentSerializer(comment_to_update, data=request.data)
         
         try:
             serialized_comment.is_valid()
