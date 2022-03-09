@@ -15,7 +15,7 @@ const NavBar = () => {
         <>
             {userIsAuthenticated() ? (
                 <>
-                <Nav class="navbar sticky-bottom">
+                <Nav className="navbar sticky-bottom">
                     <Button href='/' >
                         <AiFillHome />
                     </Button>
@@ -32,7 +32,7 @@ const NavBar = () => {
                 </>
             ) : (
                 <>
-                <Nav class="navbar sticky-bottom">
+                <Nav className="navbar sticky-bottom">
                     <Button href='/' >
                         <AiFillHome />
                     </Button>

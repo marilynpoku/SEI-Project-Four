@@ -27,10 +27,7 @@ const Products = () => {
 
         if (productsData.length) {
         
-        const brandsList = [] 
-        productsData.map(product => {
-        brandsList.indexOf(product.brand) === -1 && brandsList.push(product.brand)
-        })
+        const brandsList = [ ...new Set(productsData.map(product => product.brand))]
         setBrandOptions(brandsList)
         console.log('brandlist', brandsList)
         }
@@ -39,8 +36,7 @@ const Products = () => {
         
     const handleFilter = (e) => {
         const filterObj = { ...filters, [e.target.name]: e.target.value }
-        console.log('e.target.value', e.target.value)
-        console.log('e.target.name', e.target.name )
+        console.log('filter object', filterObj)
         setFilters(filterObj)
         }
 
@@ -50,7 +46,6 @@ const Products = () => {
             
             const search = new RegExp(filters.searchInput, 'i')
             setFilteredProducts(productsData.filter(product => {
-
                 return search.test(product.name) && (filters.brand === product.brand  || filters.brand === 'All brands')
             }))
         }
@@ -67,15 +62,14 @@ const Products = () => {
             <input onChange={handleFilter} name={'searchInput'}  defaultValue={filters.searchInput}  placeholder='Search' type='text' size='sm' />
             <section className='product-container'>
                 <SimpleGrid columns={2} spacing={4}>
-                    {productsData &&
-                    productsData.map((product, i) => {
+                    {(filteredProducts.length ? filteredProducts : productsData).map((product, i) => {
                         return (
-                            <Box key={i} > 
-                                <span className='product-text'>{product.name}</span>
-                                <Link className='product-link' to={`/products/${product.id}`}>
-                                <Image src={product.image_right} alt={product.name} bg='black' height='180px' width='180px' />
-                                </Link>
-                            </Box>
+                                <Box key={i} > 
+                                    <span className='product-text'>{product.name}</span>
+                                    <Link className='product-link' to={`/products/${product.id}`}>
+                                    <Image src={product.image_right} alt={product.name} bg='black' height='180px' width='180px' />
+                                    </Link>
+                                </Box>
                         )
                     })
                 }
