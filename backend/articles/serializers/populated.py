@@ -1,6 +1,10 @@
 from .common import ArticleSerializer
-from comments.serializers.common import CommentSerializer
+from comments.serializers.populated import PopulatedCommentSerializer
+from jwt_auth.serializers.common import UserSerializer
 
-# Serializers 
+# Serializers
+
+
 class PopulatedArticleSerializer(ArticleSerializer):
-    comments = CommentSerializer(many=True)
+    comments = PopulatedCommentSerializer(many=True)
+    owner = UserSerializer()

@@ -16,6 +16,7 @@ class Product(models.Model):
     likes = models.ManyToManyField("jwt_auth.User", related_name='product_likes')
 
 
+
     def __str__(self):
         return f"{self.name} ({self.brand})"
 
