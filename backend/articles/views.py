@@ -11,7 +11,6 @@ from .serializers.populated import PopulatedArticleSerializer
 
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-
 # Create your views here.
 
 # Get all articles

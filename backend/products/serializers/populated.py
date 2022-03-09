@@ -1,6 +1,7 @@
 from .common import ProductSerializer
-from reviews.serializers.common import ReviewSerializer
+from reviews.serializers.populated import PopulatedReviewSerializer
+
 
 # Serializers
 class PopulatedProductSerializer(ProductSerializer):
-    reviews = ReviewSerializer(many=True)
+    reviews = PopulatedReviewSerializer(many=True)

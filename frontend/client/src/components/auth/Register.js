@@ -45,18 +45,6 @@ const Register = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayTwo />)
 
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         try {
-    //             const { data } = await axios.post('/api/register')
-    //             console.log('data ->', data)
-
-    //         } catch (error) {
-    //             console.log('error ->', error)
-    //         }
-    //     }
-    //     getData()
-    // }, [])
 
     const handleChange = (e) => {
         const newObj = { ...formData, [e.target.name]: e.target.value }
@@ -76,6 +64,7 @@ const Register = () => {
 
             // TWEAKING ERROR MESSAGE -> NOT WORKING
             console.log({ ...formErrors, [e.target.name]: '' })
+            console.log(error.response.data.detail)
             // setFormErrors()
             // { ...formErrors, ...error.response.data.errors }
         }

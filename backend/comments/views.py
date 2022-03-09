@@ -9,7 +9,6 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # Serializers
 from .serializers.common import CommentSerializer
 from .serializers.populated import PopulatedCommentSerializer
-
 # Models 
 from .models import Comment
 
@@ -32,6 +31,7 @@ class CommentListView(APIView):
 
         serialized_comment = PopulatedCommentSerializer(data=request.data)
         try:
+            print(serialized_comment) 
             serialized_comment.is_valid()
             serialized_comment.save()
             return Response(serialized_comment.data, status=status.HTTP_201_CREATED)
@@ -39,8 +39,9 @@ class CommentListView(APIView):
 
         except AssertionError as error:
             print(str(error))
+            print(serialized_comment.errors)
             return Response({
-                "detail": str(error)
+                "detail": serialized_comment.errors
             }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
         except:
