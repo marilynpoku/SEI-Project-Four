@@ -39,12 +39,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+
+        # CHANGED BELOW FROM () TO [] DUE TO THIS ERROR:
+        # You cannot call `.save()` on a serializer with invalid data.
+        # {'owner': {'non_field_errors': [ErrorDetail(string='Invalid data. Expected a dictionary, but got int.', code='invalid')]}}
+        # Unprocessable Entity: /api/comments/
+
         fields = ("id", "email", "username", "first_name", "last_name", "profile_image", "password", "password_confirmation")
-
-
-# class UserToUpdateSerializer(serializers.ModelSerializer):
-
-#     username = serializers.CharField(write_only=True)
-#     first_name =serializers.CharField(write_only=True)
-#     last_name =serializers.CharField(write_only=True)
-#     profile_image = serializers.CharField(write_only=True)

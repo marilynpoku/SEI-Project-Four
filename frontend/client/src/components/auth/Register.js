@@ -73,7 +73,6 @@ const Register = () => {
 
     return (
         <>
-
             <Button
                 ml='4'
                 onClick={() => {

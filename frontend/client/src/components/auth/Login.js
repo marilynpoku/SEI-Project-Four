@@ -35,7 +35,7 @@ const Login = () => {
         } catch (error) {
             console.log(error.response)
 
-            setFormErrors(error.response.data.message)
+            setFormErrors(error.response.data.detail)
         }
     }
 

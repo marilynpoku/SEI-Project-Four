@@ -16,7 +16,6 @@ class Comment(models.Model):
         "jwt_auth.User",
         related_name = "comments",
         on_delete= models.CASCADE,
-        # default='',
     )
 
     def __str__(self):

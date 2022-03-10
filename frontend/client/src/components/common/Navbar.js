@@ -15,7 +15,7 @@ const NavBar = () => {
         <>
             {userIsAuthenticated() ? (
                 <>
-                <Nav className="navbar sticky-bottom">
+                <Nav sticky="bottom" className="navbar sticky-bottom">
                     <Button href='/' >
                         <AiFillHome />
                     </Button>

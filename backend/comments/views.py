@@ -17,19 +17,12 @@ from .models import Comment
 class CommentListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
-    # # Get all comments
-    # def get(self, _request):
-    #     comments = Comment.objects.all()
-    #     serialized_comments = PopulatedCommentSerializer(comments, many=True)
-
-    #     return Response(serialized_comments.data, status=status.HTTP_200_OK)
-
     # Add comment
     def post(self, request):
 
         request.data["owner"] = request.user.id
 
-        serialized_comment = PopulatedCommentSerializer(data=request.data)
+        serialized_comment = CommentSerializer(data=request.data)
         try:
             print(serialized_comment) 
             serialized_comment.is_valid()
