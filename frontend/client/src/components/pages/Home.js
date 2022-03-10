@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
-import { Heading, Container, Image, SimpleGrid, Box } from '@chakra-ui/react'
+import { Heading, Image, Box, Text} from '@chakra-ui/react'
 import { userIsAuthenticated } from '../auth/helpers'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 
 
 
@@ -68,9 +70,12 @@ const Home = () => {
 
 
     return (
-        <> {userIsAuthenticated() ?
+        <>
+        <header className='home-header'>
+        <Heading as='h1' size='4xl' className='text-center' isTruncated>OTISX</Heading>
+            {userIsAuthenticated() ?
             <>
-                <Nav className='justify-content-end' >
+                <Nav className='justify-content-end'>
                     <Nav.Item>
                         <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                     </Nav.Item>
@@ -86,39 +91,41 @@ const Home = () => {
                 </Nav.Item>
             </Nav>
         }
-            <Heading as='h1' size='4xl' isTruncated>OTISX</Heading>
-            <Container>
+        </header>
+            
+            <Container >
                 {randomArticles &&
                     randomArticles.map((article, i) => {
                         return (
-                            <Link key={i} className='article-link' to={`/article/${article.id}`}>
+                            <Box className='article-container' key={i}>
+                            <Link className='article-link' to={`/article/${article.id}`}>
                                 <Image borderRadius='full' boxSize='100%' src={article.image} alt={article.name} />
                                 <h6 className='text-center'>ARTICLE</h6>
                                 <h3 className='text-center'>{article.tagline}</h3>
                             </Link>
-                        )
-                    })
-                }
-            </Container>
-            <Heading className='text-center' as='h2' size='2xl'>Upcoming drops </Heading>
-
-            <Container className='upcoming-drops'>
-            <SimpleGrid columns={1} spacing={4}>
-                {productDrops &&
-                    productDrops.map((product, i) => {
-                        return (
-                            <Box key={i} >
-                                <Link className='product-link' to={`/products/${product.id}`}>
-                                    <span className='product-text text-center'>{product.name}</span>
-                                    <br />
-                                    <span className='product-text text-center'> Draw opens: {new Date(product.release_date).toLocaleString('uk')}</span>
-                                    <Image src={product.image_right} alt={product.name} bg='black' height='360px' width='360px' />
-                                </Link>
                             </Box>
                         )
                     })
                 }
-            </SimpleGrid>
+            </Container>
+
+            <Heading className='text-center' as='h2' size='2xl'>NEW RELEASES </Heading>
+
+            <Container className='upcoming-drops-container container-sm '>
+                    {productDrops &&
+                        productDrops.map((product, i) => {
+                            return (
+                                    <Box  key={i} className='card-container' style={{ width: '390px', height: '490px' }}>
+                                    <Link className='product-link' to={`products/${product.id}`}>
+                                        <Card.Img className='card-image' variant='top' src={product.image_right} alt={product.name} max-width='380px' height='380px' />
+                                        </Link>
+                                        <Card.Title>{product.name}</Card.Title>
+                                        <Text>Draw opens: {new Date(product.release_date).toLocaleString('uk')}</Text>
+                                        <Text>£{product.price}</Text>
+                                    </Box>
+                            )
+                        })
+                    }
             </Container>
         </>
     )

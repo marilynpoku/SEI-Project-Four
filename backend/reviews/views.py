@@ -25,12 +25,13 @@ class ReviewListView(APIView):
 
         print("data", request.data)
 
-        serialized_review = PopulatedReviewSerializer(data=request.data)
+        serialized_review = ReviewSerializer(data=request.data)
         try:
             serialized_review.is_valid()
             serialized_review.save()
             return Response(serialized_review.data, status=status.HTTP_201_CREATED)
         except AssertionError as error:
+            print(serialized_review.errors)
             print(str(error))
             return Response({
                 "detail": str(error)

@@ -1,0 +1,54 @@
+
+.home-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: sticky; top: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.upcoming-drops-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
+    min-width: 380px;
+    min-height: 380px;
+    margin: 2px;
+}
+
+.card {
+    border :none !important;
+}
+
+a.product-link {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+}
+
+a.article-link {
+    text-decoration: none;
+    color: black;
+}
+
+.article-container {
+    padding-bottom:18px;
+    &:hover {
+        cursor: pointer;
+    }
+}

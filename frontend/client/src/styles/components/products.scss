@@ -1,0 +1,37 @@
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: sticky; top: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 10px;
+}
+
+.product-feed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-select {
+    border: none;
+}
+
+.brand-search {
+    border: none;
+}
+
+
+
