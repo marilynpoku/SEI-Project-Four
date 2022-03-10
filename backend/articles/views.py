@@ -14,9 +14,11 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # Create your views here.
 
 # Get all articles
+
+
 class ArticleListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
-    
+
     def get(self, _request):
         articles = Article.objects.all()
         serialized_articles = PopulatedArticleSerializer(articles, many=True)
@@ -25,14 +27,15 @@ class ArticleListView(APIView):
 
 
 # Post new article
+
     def post(self, request):
         request.data["owner"] = request.user.id
-        
-        serialized_data = ArticleSerializer(data=request.data)
+
+        serialized_articles = ArticleSerializer(data=request.data)
         try:
-            serialized_data.is_valid()
-            serialized_data.save()
-            return Response(serialized_data.data, status=status.HTTP_201_CREATED)
+            serialized_articles.is_valid()
+            serialized_articles.save()
+            return Response(serialized_articles.data, status=status.HTTP_201_CREATED)
 
         except IntegrityError as error:
             return Response({
@@ -40,8 +43,9 @@ class ArticleListView(APIView):
             }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
         except AssertionError as error:
+            print(serialized_articles.errors)
             return Response({
-                "detail": str(error)
+                "detail": serialized_articles.data
             }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
         except:
