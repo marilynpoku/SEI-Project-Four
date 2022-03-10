@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { getTokenFromLocalStorage, userIsAuthenticated } from './../../auth/helpers'
+import { getTokenFromLocalStorage, userIsAuthenticated } from '../auth/helpers'
 import { Link } from 'react-router-dom'
 
 
@@ -12,8 +12,6 @@ const ReviewForm = ({ id, refreshData, review, setReview }) => {
 
 
     const [ formErros, setFormErrors] = useState('')
-    // const [productData, setproductData] = useState('')
-    // const isTextareDisabled = review.text.length === 0 
 
     // Post a review
     const handleSubmit = async (e) => {
@@ -52,7 +50,7 @@ const ReviewForm = ({ id, refreshData, review, setReview }) => {
                 <Form.Control onChange={handleChange} name='text' type='text' as='textarea' placeholder='Have your say...' value={review.text} />
             </Form.Group>
             <Form.Group className='text-center mt-4'>
-                <Button onClick={handleSubmit}  type='submit' className='btn'>Post comment</ Button>
+                <Button onClick={handleSubmit}  type='submit' className='btn'>Post review</ Button>
             </Form.Group>
             </>
             :

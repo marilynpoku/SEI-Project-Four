@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import ProductCarousel from '../utilities/SingleProduct/ProductCarousel'
+import ProductCarousel from '../utilities/ProductCarousel'
 import { useParams} from 'react-router-dom'
-import ReviewForm from '../utilities/SingleProduct/ReviewForm'
+import ReviewForm from '../utilities/ReviewForm'
+// import Basket from '../utilities/Basket'
 
 
 // Layout and styling imports
@@ -21,6 +22,7 @@ const SingleProduct = () => {
     const [productData, setproductData] = useState('')
     const {id } = useParams()
     const [ review, setReview ] = useState({ text:'', product: `${id}`})
+    const [basket, setBasket ] = useState([])
 
     // Get product data
     const getData = useCallback(async () =>  { 
@@ -37,6 +39,31 @@ const SingleProduct = () => {
         getData()
     },[getData, id])
 
+
+
+    const getBasketFromLocalStorage = () => {
+        window.localStorage.getItem('basket') 
+    } 
+
+
+    const addToBasket = () => {
+        console.log('Add to basket function')
+        console.log('basket', basket)
+        console.log('productData',productData)
+        setBasket([...basket, {...productData}])
+
+    }
+
+    useEffect(()=> {
+        window.localStorage.setItem('basket', JSON.stringify(basket))
+    },[basket])
+
+    // const removeFromBasket = ( productToRemove ) => {
+    //     setBasket(basket.filter((productData) => productData !== productToRemove)
+    //     )
+    // }
+
+
     
     return (
         <>
@@ -44,25 +71,25 @@ const SingleProduct = () => {
             <Container className='produdct-details'>
                 <Heading as='h2' size='xl'>{productData.name}</Heading>
                 <BsHeartFill/>{productData.likes}
-                {/* <Link className='product-link' to={`/brand/${brandData.id}`}> */}
                     <Heading as='h5' size='sm'>{productData.brand}</Heading>
-                {/* </Link> */}
                 <Heading as='h6' size='xs'>Product Details</Heading>
                 <Text>{productData.product_details}</Text>
                 <Stat>
                     <StatNumber>£{productData.price}</StatNumber>
                 </Stat>
             </Container>
-            <Button className='btn btn-dark' size='sm'> <BsBagDashFill/>Add</Button>
+            <Button onClick={addToBasket} className='btn btn-dark' size='sm'> <BsBagDashFill/>Add</Button>
+            <Button className='btn btn-dark'>Go to basket ({basket.length})</Button>
             {productData && (
             <Container className='review-text'>
                 <Heading className='text-center' as='h4' size='md'>Reviews ({productData.reviews.length})</Heading>
+                <ReviewForm id={id} refreshData={getData} review={review} setReview={setReview}/>
                 {productData.reviews.map((review, i ) => {
                     return (
                         <Box key={i}>
                             {/* <Image borderRadius='100%' height='40px'  src={review.owner.profile_image} /> */}
-                            <Text>Submitted by: {review.owner.username}</Text>
-                            <Text>{review.text} <span className='review-timestamp, text-muted'>{new Date(review.created_at).toLocaleString('uk')}</span></Text>
+                            <Text>Posted by: {review.owner.username} <span className='review-timestamp, text-muted'>{new Date(review.created_at).toLocaleString('uk')}</span></Text>
+                            <Text>{review.text}</Text>
                         </Box>
                     )
                 })
@@ -70,7 +97,6 @@ const SingleProduct = () => {
             </Container>
             )
             }
-            <ReviewForm id={id} refreshData={getData} review={review} setReview={setReview}/>
         </>
     )  
 }
