@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Box, Heading, Select, Text, Stack } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack } from '@chakra-ui/react'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
+import { BsSearch } from "react-icons/bs";
 
 
 const Products = () => {
@@ -54,22 +55,21 @@ const Products = () => {
             }))
         }
             }, [productsData, filters])
-
-    
     
     return (
         <>
-            <Heading className='text-center main-header' as='h2' size='xl'>FEED</Heading>
+            <Heading className='text-center main-header' as='h2' size='xl'>OTISX
             <Form className='form'>
                 <Stack spacing={4}>
-                <Select className='brand-select' onChange={handleFilter} name={'brand'} defaultValue={productsData.brand} >
+                <Form.Select className='brand-select' onChange={handleFilter} name={'brand'} defaultValue={productsData.brand} >
                     <option value='' defaultValue disabled> -- Select a brand -- </option>
                     <option value='All brands'>All brands</option>
                     {brandOptions && brandOptions.sort().map((brand, i) => <option key={i} value={brand}>{brand}</option> )}
-                </Select>
-                <input className='brand-search'onChange={handleFilter} name={'searchInput'}  defaultValue={filters.searchInput}  placeholder='Search' type='text' size='sm' />
+                </Form.Select>
+                <Form.Control className='brand-search'onChange={handleFilter} name={'searchInput'}  defaultValue={filters.searchInput}  placeholder='Search' type='text' />
                 </Stack>
             </Form>
+            </Heading>  
             <Container className='product-feed-container container-sm'>
                     {(filteredProducts.length ? filteredProducts : productsData).map((product, i) => {
                         return (

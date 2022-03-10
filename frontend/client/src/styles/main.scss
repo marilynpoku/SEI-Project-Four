@@ -1,6 +1,10 @@
 @import './components/Navbar.scss';
 @import './components/home.scss';
 @import './components/products.scss';
+@import './components/SingleProducts.scss';
+@import './components/articles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 
 
 
@@ -12,6 +16,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 

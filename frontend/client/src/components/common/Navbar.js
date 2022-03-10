@@ -16,16 +16,16 @@ const NavBar = () => {
             {userIsAuthenticated() ? (
                 <>
                 <Nav className='navbar '>
-                    <Button href='/' >
+                    <Button className='btn btn-dark' href='/' >
                         <AiFillHome />
                     </Button>
 
-                    <Button href='/products'>
+                    <Button className='btn btn-dark' href='/products'>
                         <GiConverseShoe />
                     </Button>
 
 
-                    <Button href='/profile'>
+                    <Button className='btn btn-dark' href='/profile'>
                         <RiUserFill />
                     </Button>
                 </Nav>
@@ -33,16 +33,16 @@ const NavBar = () => {
             ) : (
                 <>
                 <Nav className='navbar'>
-                    <Button href='/' >
+                    <Button className='btn btn-dark' href='/' >
                         <AiFillHome />
                     </Button>
 
-                    <Button href='/products'>
+                    <Button className='btn btn-dark' href='/products'>
                         <GiConverseShoe />
                     </Button>
 
 
-                    <Button href='/login'>
+                    <Button className='btn btn-dark'href='/login'>
                         <RiUserFill />
                     </Button>
                 </Nav>

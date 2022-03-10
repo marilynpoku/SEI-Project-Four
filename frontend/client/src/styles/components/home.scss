@@ -9,6 +9,13 @@
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
+.logout, .login, .join-us {
+    text-decoration: none !important;
+    color: black !important;
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
 .upcoming-drops-container {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +49,7 @@ a.product-link {
 }
 
 a.article-link {
-    text-decoration: none;
+    text-decoration: none !important;
     color: black;
 }
 
@@ -50,5 +57,27 @@ a.article-link {
     padding-bottom:18px;
     &:hover {
         cursor: pointer;
+    }
+}
+
+.releases-heading h2 {
+    font-weight: 400 !important;
+}
+
+
+@media only secreen and (min-width: 768px) {
+    .articles-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+    .article-container {
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
     }
 }

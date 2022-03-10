@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { getTokenFromLocalStorage } from '../auth/helpers.js'
 import { useParams } from 'react-router-dom'
-import { Heading, Text, Image, Box, Divider, Center } from '@chakra-ui/react'
+import { Heading, Text, Image, Box, Divider, Center, Container } from '@chakra-ui/react'
 
 // import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import { BsHeartFill } from "react-icons/bs";
 
 
 
@@ -62,7 +63,7 @@ const Article = () => {
                     Authorization: `Bearer ${getTokenFromLocalStorage()}`,
                 },
             })
-            setComments({  ...comments, text: '' })
+            setComments({ ...comments, text: '' })
             const getSingleArticles = async () => {
                 try {
                     const { data } = await axios.get(`/api/articles/${id}`)
@@ -97,9 +98,10 @@ const Article = () => {
                     {/* ARTICLE IMAGE 2 */}
                     <Image borderRadius='full' boxSize='100%' src={articles.image_extra} alt='article image two' />
                     {/* ARTICLE OWNER */}
-                    <Text className='m-1' size='sm' fontSize='10px' textAlign='justify'> Written by: {articles.owner.username}</Text>
+                    <Text mx={30} size='sm' fontSize='15px' textAlign='justify' textColor={'grey'} > Written by: {articles.owner.username}</Text>
                     {/* LIKE BUTTON */}
-                    <Button className='px-2 m-1' variant="danger" size={'sm'} > LIKE </Button>
+                    <Box mx={30}><BsHeartFill className='m-30' /> {articles.likes}</Box>
+
 
 
                     {/* COMMENTS SECTION */}
@@ -119,26 +121,29 @@ const Article = () => {
 
 
                     {/* Comment Submit */}
+                    <Container className='reviews-container' border={'1px solid white'} bg={'whitesmoke'}>
                     <Col md={2} className='mb-3'>
                         {/* below: onSubmit={handleSubmit} */}
                         <Form onSubmit={handleSubmit}>
                             <Row>
                                 <Col>
-                                    <Form.Group className='mx-2'>
-                                        <Form.Label className='m-1 ' >Comment</Form.Label>
-                                        {/* below: onChange={handleChange} */}
-                                        <Form.Control
-                                            name='text'
-                                            type='text'
-                                            as='textarea'
-                                            onChange={handleChange}
-                                            placeholder='Add Comment Here'
-                                            value={comments.text}
-                                        />
-                                        <Button name='text' type='submit'>
-                                            Post Comment
-                                        </Button>
-                                    </Form.Group>
+                                        <Form.Group className='mx-2'>
+                                            <Heading mt={25} className='text-center' as='h4' size='md'>Comments ({articles.comments.length})</Heading>
+                                            {/* below: onChange={handleChange} */}
+                                            <Form.Control
+                                                name='text'
+                                                type='text'
+                                                as='textarea'
+                                                onChange={handleChange}
+                                                placeholder='Add Comment Here'
+                                                value={comments.text}
+                                            />
+                                            <Container className='button-container'>
+                                                <Button className='btn btn-dark comment-btn' name='text' type='submit'>
+                                                    Post Comment
+                                                </Button>
+                                            </Container>
+                                        </Form.Group>
                                 </Col>
                             </Row>
                         </Form>
@@ -154,14 +159,14 @@ const Article = () => {
                                     new Date(b.created_at) - new Date(a.created_at)
                             ).map((comment) => {
                                 return (
-                                    <Box border={'1px solid white'} bg={'whitesmoke'} mb={2} key={comment.id}>
-                                        <Box display={'flex'} flexDirection={'column'}>
+                                    <Box mb={2} key={comment.id}>
+                                        <Box>
                                             <Box>
-                                                <Box display={'flex'} alignItems={'center'} my={2}>
-                                                    <Image borderRadius='full' boxSize='40px' src={comment.owner.profile_image} />
-                                                    <Text my={3} pl={'1rem'} textColor={'grey'}>{comment.owner.username}</Text>
-                                                    <Text pl={'0.5rem'}>{comment.text}</Text>
-                                                    <Button> Delete </Button>
+                                                <Box my={30} mx={30}>
+                                                    <Image mx={30} borderRadius='full' boxSize='40px' src={comment.owner.profile_image} />
+                                                    <Text mx={30} textColor={'grey'}>{comment.owner.username}</Text>
+                                                    <Text mx={30}>{comment.text}</Text>
+                                                    <Divider/>
                                                 </Box>
                                             </Box>
                                         </Box>
@@ -170,13 +175,10 @@ const Article = () => {
                             })}
                         </>
                     )}
-
-
+                    </Container>
                 </>
-
-            )}
-
-        </section>
+    )}
+        </section >
     )
 }
 

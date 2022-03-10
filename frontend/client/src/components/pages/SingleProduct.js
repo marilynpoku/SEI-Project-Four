@@ -8,9 +8,8 @@ import ReviewForm from '../utilities/ReviewForm'
 
 
 // Layout and styling imports
-import { Container, Heading, Stat, StatNumber, Text, Box, Image } from '@chakra-ui/react'
+import { Container, Heading, Stat, StatNumber, Text, Box, Divider } from '@chakra-ui/react'
 import  Button from 'react-bootstrap/Button'
-import { BsHeart } from "react-icons/bs";
 import { BsHeartFill } from "react-icons/bs";
 import { BsBagDashFill } from "react-icons/bs";
 
@@ -69,27 +68,29 @@ const SingleProduct = () => {
         <>
             <ProductCarousel productData={productData}/>
             <Container className='produdct-details'>
-                <Heading as='h2' size='xl'>{productData.name}</Heading>
-                <BsHeartFill/>{productData.likes}
-                    <Heading as='h5' size='sm'>{productData.brand}</Heading>
-                <Heading as='h6' size='xs'>Product Details</Heading>
-                <Text>{productData.product_details}</Text>
+                <Heading as='h2' size='xl' mx={30}>{productData.name} </Heading>
+                <Box ml={330}><BsHeartFill className='m-30' mx={30}/> {productData.likes}</Box>
+                    <Heading as='h5' size='sm' mx={30}>{productData.brand}</Heading>
+                <Heading as='h6' size='xs' mx={30} >Product Details</Heading>
+                <Text size='sm' fontSize='15px' textAlign='justify' mx={30} my={30}>{productData.product_details}</Text>
                 <Stat>
-                    <StatNumber>£{productData.price}</StatNumber>
+                <StatNumber mx={30} fontSize='15px' >£{productData.price}</StatNumber>
                 </Stat>
             </Container>
-            <Button onClick={addToBasket} className='btn btn-dark' size='sm'> <BsBagDashFill/>Add</Button>
-            <Button className='btn btn-dark'>Go to basket ({basket.length})</Button>
+            <Container className='button-container'>
+                <Button onClick={addToBasket} className='btn btn-dark' size='sm'><BsBagDashFill/>  Add</Button>
+                <Button className='btn btn-dark'>Go to basket ({basket.length})</Button>
+            </Container>
             {productData && (
-            <Container className='review-text'>
-                <Heading className='text-center' as='h4' size='md'>Reviews ({productData.reviews.length})</Heading>
+            <Container className='reviews-container' border={'1px solid white'} bg={'whitesmoke'}>
+                <Heading mt={25} className='text-center' as='h4' size='md'>Reviews ({productData.reviews.length})</Heading>
                 <ReviewForm id={id} refreshData={getData} review={review} setReview={setReview}/>
                 {productData.reviews.map((review, i ) => {
                     return (
-                        <Box key={i}>
-                            {/* <Image borderRadius='100%' height='40px'  src={review.owner.profile_image} /> */}
-                            <Text>Posted by: {review.owner.username} <span className='review-timestamp, text-muted'>{new Date(review.created_at).toLocaleString('uk')}</span></Text>
+                        <Box  my={30} mx={30} key={i}>
+                            <Text>{review.owner.username}</Text>
                             <Text>{review.text}</Text>
+                            <Divider/>
                         </Box>
                     )
                 })

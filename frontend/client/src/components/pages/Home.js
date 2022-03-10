@@ -77,23 +77,23 @@ const Home = () => {
             <>
                 <Nav className='justify-content-end'>
                     <Nav.Item>
-                        <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                        <Nav.Link className='logout' onClick={handleLogout}>Logout</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </>
             :
             <Nav className='justify-content-end' >
                 <Nav.Item>
-                    <Nav.Link href='/login'>Login</Nav.Link>
+                    <Nav.Link className='login'href='/login'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href='/register'>Join Us</Nav.Link>
+                    <Nav.Link className='join-us' href='/register'>Join Us</Nav.Link>
                 </Nav.Item>
             </Nav>
         }
         </header>
             
-            <Container >
+            <Container className='articles-container container-sm' >
                 {randomArticles &&
                     randomArticles.map((article, i) => {
                         return (
@@ -109,7 +109,7 @@ const Home = () => {
                 }
             </Container>
 
-            <Heading className='text-center' as='h2' size='2xl'>NEW RELEASES </Heading>
+            <Heading className='text-center releases-heading' as='h2' size='3xl' isTruncated>NEW RELEASES </Heading>
 
             <Container className='upcoming-drops-container container-sm '>
                     {productDrops &&
@@ -117,7 +117,7 @@ const Home = () => {
                             return (
                                     <Box  key={i} className='card-container' style={{ width: '390px', height: '490px' }}>
                                     <Link className='product-link' to={`products/${product.id}`}>
-                                        <Card.Img className='card-image' variant='top' src={product.image_right} alt={product.name} max-width='380px' height='380px' />
+                                        <Card.Img className='card-image ' variant='top' src={product.image_right} alt={product.name} max-width='380px' height='380px' />
                                         </Link>
                                         <Card.Title>{product.name}</Card.Title>
                                         <Text>Draw opens: {new Date(product.release_date).toLocaleString('uk')}</Text>

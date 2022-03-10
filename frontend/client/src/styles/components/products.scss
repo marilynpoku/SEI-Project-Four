@@ -1,6 +1,6 @@
 .main-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     position: sticky; top: 0;
@@ -26,12 +26,10 @@
 }
 
 .brand-select {
-    border: none;
+    border: none !important;
 }
 
-.brand-search {
-    border: none;
-}
+
 
 
 
