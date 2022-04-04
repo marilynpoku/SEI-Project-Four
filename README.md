@@ -94,7 +94,7 @@ We used trello to keep track of our tasks during the project.
 
 #### Backend 
 
-The final module which covered python was very intense and fast paced. Both Metaab and I wanted to consolidate our knowledge on python and see the overall picture of the backend functionality. So we decided to code the backend together using our notes from class with one person screen sharing. 
+The final module which covered python was very intense and fast paced. Both Metaab and I wanted to consolidate our knowledge on Python and see the overall picture of the backend functionality. So we decided to code the backend together using our notes from class with one person screen sharing. 
 
 We started building our products app working on the models, serializers, views and urls to create a SQL database with RESTful features. We spent the most time on this app ensuring we both understood how everything linked together before creating the other apps for our application. We used TablePlus to visualise the PostgreSQL database and insomnia to test our requests and relationships. The products, articles, brands and user models were the main models for our app. 
 
@@ -157,7 +157,7 @@ I really enjoyed collaborating with Mehtaab on the backend and building our unde
 
 ### Key learnings 
 
-- I had the opportunity to solidify my knowledge on the foundational concepts of python such as list, objects, classes etc
+- I had the opportunity to solidify my knowledge on the foundational concepts of Python such as list, objects, classes etc
 - Whilst I enjoyed the challenge of working with a language I was not confident with. I would have changed the MVP to focus on products solely and the e-commerce aspect of the app to reduce the volume of work at the backend so we had more time to work on the frontend functionality
 
 
