@@ -120,7 +120,7 @@ I created a separate component for the review form and imported this on the sing
 To solve this problem I wrapped the getData async function with a useCallback rather than a useEffect. This allowed me to invoke the getData function within a useEffect that will check for 
 updates on the getData array. 
 
-I passed down refreshData as prop to call the getData function once the user had posted a review
+I passed down refreshData as prop to call the getData function once the user had posted a review.
 
 #### Styling 
 
