@@ -148,7 +148,7 @@ We used a combination of Chakra, React bootstrap and SASS for the styling and se
 
 I really enjoyed collaborating with Mehtaab on the backend and building our understanding of python by finding solutions when things broke and getting excited when we resolved an error and got a new one. This allowed us to see how everything linked together and also understand the importance of when to use a serializer vs populated serializer.
 
-Future improvements 
+### Future improvements 
 
 - Adding error handling to all forms and improved feedback such as spinners when there are delays in loading the data
 - Improved styling for mobile up 
