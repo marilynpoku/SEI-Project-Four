@@ -94,7 +94,7 @@ We used trello to keep track of our tasks during the project.
 
 #### Backend 
 
-The final module which covered python was very intense and fast paced. Both Metaab and I wanted to consolidate our knowledge on Python and see the overall picture of the backend functionality. So we decided to code the backend together using our notes from class with one person screen sharing. 
+The final module which covered Python was very intense and fast paced. Both Metaab and I wanted to consolidate our knowledge on Python and see the overall picture of the backend functionality. So we decided to code the backend together using our notes from class with one person screen sharing. 
 
 We started building our products app working on the models, serializers, views and urls to create a SQL database with RESTful features. We spent the most time on this app ensuring we both understood how everything linked together before creating the other apps for our application. We used TablePlus to visualise the PostgreSQL database and insomnia to test our requests and relationships. The products, articles, brands and user models were the main models for our app. 
 
@@ -134,7 +134,7 @@ We used a combination of Chakra, React bootstrap and SASS for the styling and se
 
 ### Challenges 
 
-- Working with a new language that we had just learnt near the end of the course was very challenging particularly because I felt I still needed more time to get my head around python before working on backend
+- Working with a new language that we had just learnt near the end of the course was very challenging particularly because I felt I still needed more time to get my head around Python before working on backend
 - Getting the comments show on the page when they were posted as discussed above
 - Working with serializers and populated serializer
 - Populating our models with the contents of the owner field rather than just the primary key of the owner 
