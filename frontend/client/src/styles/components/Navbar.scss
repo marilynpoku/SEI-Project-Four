@@ -1,11 +1,41 @@
-.navbar {
+header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
-    background: white;
-    border-top: 1px solid rgba(0,0,0,.125);
-    bottom: 0;  
-    height: 42px; 
-    position: absolute; 
+    position: sticky; 
+    top: 0;
+    background-color: white;
+}
+
+
+.navbar-brand {
+    a{
+        text-decoration: none;
+        color: black;
+        &:hover {
+            color: black;
+            text-decoration: underline;
+        }
+    }
+}
+
+.nav-item {
+    a {
+        text-decoration: none;
+        color: black;
+        margin: 6px;
+        &:hover {
+            color: black;
+            text-decoration: underline;
+        }
+    }
+}
+
+.logout {
+    margin: 6px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }

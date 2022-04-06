@@ -7,7 +7,7 @@ const ProductCarousel = ({ productData }) => {
 
     return (
         <>
-            <Carousel>
+            <Carousel className='carousel'>
                 <Carousel.Item>
                     <img
                         className='d-block w-100 carousel-img'
@@ -18,7 +18,7 @@ const ProductCarousel = ({ productData }) => {
                 <Carousel.Item>
                     <img
                         className='d-block w-100 carousel-img'
-                        src={productData.image_left}
+                        src={productData.image_right}
                         alt={productData.name}
                     />
                 </Carousel.Item>

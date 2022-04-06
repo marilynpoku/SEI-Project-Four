@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { Button, Modal, ModalContent, ModalHeader, Text, ModalBody, ModalCloseButton, ModalOverlay, ModalFooter, Container } from '@chakra-ui/react'
+import { Button, Modal, ModalContent, ModalBody, ModalOverlay, Box, Container } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import Form from 'react-bootstrap/Form'
 import { useNavigate } from 'react-router-dom'
@@ -58,13 +58,15 @@ const Login = () => {
 
     return (
         <>
-            <Button
-                ml='4'
-                onClick={() => {
-                    setOverlay(<OverlayTwo />)
-                    onOpen()
-                }}
-            > Login </Button>
+            <Container display='flex' justifyContent='center' alignItems='center'>
+                <Button
+                    ml='4'
+                    onClick={() => {
+                        setOverlay(<OverlayTwo />)
+                        onOpen()
+                    }}
+                > Login </Button>
+            </Container>
 
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 {overlay}
@@ -75,23 +77,27 @@ const Login = () => {
 
                     <ModalBody pb={6}>
                         <Form>
-                            <Row className='text-center'>
-                                <Col md={6}>
-                                    <Form.Group mt={4}>
-                                        <Form.Label>Username</Form.Label>
-                                        <Form.Control onChange={handleChange} type='text' name='username' placeholder='username' defaultValue={formData.username} />
-                                        {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
-                                    </Form.Group>
-                                    <Form.Group mt={4}>
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control onChange={handleChange} type='password' name='password' placeholder='password' defaultValue={formData.password} />
-                                        {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
-                                    </Form.Group>
-                                </Col>
-                                <Container className='button-container'>
-                                    <Button className='btn-light btn' onClick={handleSubmit}>Submit</Button>
-                                </Container>
-                            </Row>
+                            <Box display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                                <Row className='text-center'>
+                                    <Col md={6}>
+                                        <Form.Group mt={4}>
+                                            <Form.Label>Username</Form.Label>
+                                            <Form.Control onChange={handleChange} type='text' name='username' placeholder='username' defaultValue={formData.username} />
+                                            {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
+                                        </Form.Group>
+                                        <Form.Group mt={4}>
+                                            <Form.Label>Password</Form.Label>
+                                            <Form.Control onChange={handleChange} type='password' name='password' placeholder='password' defaultValue={formData.password} />
+                                            {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
+                                        </Form.Group>
+                                    </Col>
+
+                                    <Container className='button-container' display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                                        <Button className='btn-light btn' onClick={handleSubmit}>Submit</Button>
+                                    </Container>
+
+                                </Row>
+                            </Box>
                         </Form>
                     </ModalBody>
                 </ModalContent>

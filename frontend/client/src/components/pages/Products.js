@@ -5,7 +5,7 @@ import { Box, Heading, Text, Stack } from '@chakra-ui/react'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
-import { BsSearch } from "react-icons/bs";
+
 
 
 const Products = () => {
@@ -58,7 +58,7 @@ const Products = () => {
     
     return (
         <>
-            <Heading className='text-center main-header' as='h2' size='xl'>OTISX
+            <header className='text-center main-header'>
             <Form className='form'>
                 <Stack spacing={4}>
                 <Form.Select className='brand-select' onChange={handleFilter} name={'brand'} defaultValue={productsData.brand} >
@@ -69,12 +69,12 @@ const Products = () => {
                 <Form.Control className='brand-search'onChange={handleFilter} name={'searchInput'}  defaultValue={filters.searchInput}  placeholder='Search' type='text' />
                 </Stack>
             </Form>
-            </Heading>  
+            </header>  
             <Container className='product-feed-container container-sm'>
                     {(filteredProducts.length ? filteredProducts : productsData).map((product, i) => {
                         return (
                                 <Box key={i} className='card-container' style={{ width: '390px', height: '490px' }}>
-                                    <Link className='product-link' to={`products/${product.id}`}>
+                                    <Link className='product-link' to={`/products/${product.id}`}>
                                         <Card.Img className='card-image' variant='top' src={product.image_right} alt={product.name} max-width='380px' height='380px' />
                                     </Link>
                                     <Card.Title>{product.name}</Card.Title>

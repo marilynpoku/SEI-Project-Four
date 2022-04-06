@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getTokenFromLocalStorage } from '../auth/helpers.js'
+import { getPayload, getTokenFromLocalStorage } from '../auth/helpers.js'
 import { useParams } from 'react-router-dom'
 import { Heading, Text, Image, Box, Divider, Center, Container } from '@chakra-ui/react'
 
 // import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import { BsHeartFill } from "react-icons/bs";
 
@@ -78,107 +76,100 @@ const Article = () => {
         }
     }
 
+    const ownerOfArticle = () => {
+        const payload = getPayload()
+        if (!payload) return
+        return articles.owner.id === payload.sub
+    }
 
     return (
-        <section>
-            {/* NEED TO POPULATE ARTICLE, ARTICLE_LIKES, COMMENT & COMMENT_LIKES WITH OWNER INFO */}
-            {articles && (
-                <>
-                    {/* HEADLINE */}
-                    <Heading size='lg' fontSize='25px' textAlign='center' m={10} my={30} >{articles.title}</Heading>
-                    {/* TAGLINE */}
-                    <Text size='lg' fontSize='20px' textAlign='center' mx={10} mb={0}>{articles.tagline}</Text>
-                    <Center height='50px'>
-                        <Divider w='190px' />
-                    </Center>
-                    {/* ARTICLE IMAGE 1 */}
-                    <Image borderRadius='full' boxSize='100%' src={articles.image} alt='article image 1' />
-                    {/* ARTICLE TEXT */}
-                    <Text size='sm' fontSize='15px' textAlign='justify' mx={30} my={30} >{articles.text}</Text>
-                    {/* ARTICLE IMAGE 2 */}
-                    <Image borderRadius='full' boxSize='100%' src={articles.image_extra} alt='article image two' />
-                    {/* ARTICLE OWNER */}
-                    <Text mx={30} size='sm' fontSize='15px' textAlign='justify' textColor={'grey'} > Written by: {articles.owner.username}</Text>
-                    {/* LIKE BUTTON */}
-                    <Box mx={30}><BsHeartFill className='m-30' /> {articles.likes}</Box>
-
-
-
-                    {/* COMMENTS SECTION */}
-                    {/* <Text>Comments</Text>
-                    {articles.comments.map((comment, index) => {
-                        return (
-                            <Box key={index}>
-                                <Text >{comment.owner.username}</Text>
-                                <Image borderRadius='full' boxSize='40px' src={comment.owner.profile_image} />
-                                <Text >{comment.text}</Text>
-                                <Text>Likes: {comment.comment_likes}</Text>
+        <Container display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+            <div className='article-page-container'>
+                {/* NEED TO POPULATE ARTICLE, ARTICLE_LIKES, COMMENT & COMMENT_LIKES WITH OWNER INFO */}
+                {articles && (
+                    <>
+                        <div className='article-content'>
+                            {/* HEADLINE */}
+                            <Heading size='lg' fontSize='25px' textAlign='center' mx={10} >{articles.title}</Heading>
+                            {/* TAGLINE */}
+                            <Text size='lg' fontSize='20px' textAlign='center' mx={10} mb={0}>{articles.tagline}</Text>
+                            <Center height='50px'>
+                                <Divider w='190px' />
+                            </Center>
+                            {/* ARTICLE IMAGE 1 */}
+                            <Box display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                                <Image borderRadius='full' boxSize='100%' maxWidth='500px' objectFit='cover' objectPosition='center' src={articles.image} alt='article image 1' />
                             </Box>
-                        )
-                    })} */}
+                            {/* ARTICLE TEXT */}
+                            <Text size='sm' fontSize='15px' textAlign='justify' mx={30} >{articles.text}</Text>
+                            {/* ARTICLE IMAGE 2 */}
+                            <Box display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                                <Image borderRadius='full' boxSize='100%'maxWidth='500px' objectFit='cover' objectPosition='center' src={articles.image_extra} alt='article image two' />
+                            </Box>
+                            {/* ARTICLE OWNER */}
+                            <Text mx={30} size='sm' fontSize='15px' textAlign='justify' textColor={'grey'} > Written by: {articles.owner.username}</Text>
+                            {ownerOfArticle() &&
+                                <Button className='btn btn-dark'>Edit</Button>
+                            }
+                            {/* LIKE BUTTON */}
+                            <Box mx={30}><BsHeartFill className='m-30' /> {articles.likes}</Box>
+                        </div>
 
 
+                        {/* Comment Submit */}
+                        <div className='comments-container'>
+                            {/* below: onSubmit={handleSubmit} */}
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group className='mx-2'>
+                                    <Heading className='text-center' as='h4' size='md' mt='5vh'>Comments ({articles.comments.length})</Heading>
+                                    {/* below: onChange={handleChange} */}
+                                    <Form.Control
+                                        name='text'
+                                        type='text'
+                                        as='textarea'
+                                        onChange={handleChange}
+                                        placeholder='Add Comment Here'
+                                        value={comments.text}
+                                    />
+                                    <Container className='button-container'>
+                                        <Button className='btn btn-dark comment-btn' name='text' type='submit'>
+                                            Post Comment
+                                        </Button>
+                                    </Container>
+                                </Form.Group>
+                            </Form>
+                            {/* Comments */}
 
-
-                    {/* Comment Submit */}
-                    <Container className='reviews-container' border={'1px solid white'} bg={'whitesmoke'}>
-                    <Col md={2} className='mb-3'>
-                        {/* below: onSubmit={handleSubmit} */}
-                        <Form onSubmit={handleSubmit}>
-                            <Row>
-                                <Col>
-                                        <Form.Group className='mx-2'>
-                                            <Heading mt={25} className='text-center' as='h4' size='md'>Comments ({articles.comments.length})</Heading>
-                                            {/* below: onChange={handleChange} */}
-                                            <Form.Control
-                                                name='text'
-                                                type='text'
-                                                as='textarea'
-                                                onChange={handleChange}
-                                                placeholder='Add Comment Here'
-                                                value={comments.text}
-                                            />
-                                            <Container className='button-container'>
-                                                <Button className='btn btn-dark comment-btn' name='text' type='submit'>
-                                                    Post Comment
-                                                </Button>
-                                            </Container>
-                                        </Form.Group>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </Col>
-                    {/* Comments */}
-
-                    {!articles.comments.length ? (
-                        <></>
-                    ) : (
-                        <>
-                            {articles.comments.sort(
-                                (a, b) =>
-                                    new Date(b.created_at) - new Date(a.created_at)
-                            ).map((comment) => {
-                                return (
-                                    <Box mb={2} key={comment.id}>
-                                        <Box>
-                                            <Box>
-                                                <Box my={30} mx={30}>
-                                                    <Image mx={30} borderRadius='full' boxSize='40px' src={comment.owner.profile_image} />
-                                                    <Text mx={30} textColor={'grey'}>{comment.owner.username}</Text>
-                                                    <Text mx={30}>{comment.text}</Text>
-                                                    <Divider/>
+                            {!articles.comments.length ? (
+                                <></>
+                            ) : (
+                                <>
+                                    {articles.comments.sort(
+                                        (a, b) =>
+                                            new Date(b.created_at) - new Date(a.created_at)
+                                    ).map((comment) => {
+                                        return (
+                                            <Box mb={2} key={comment.id}>
+                                                <Box>
+                                                    <Box>
+                                                        <Box my={30} mx={30}>
+                                                            <Image mx={30} borderRadius='full' boxSize='40px' src={comment.owner.profile_image} />
+                                                            <Text mx={30} textColor={'grey'}>{comment.owner.username}</Text>
+                                                            <Text mx={30}>{comment.text}</Text>
+                                                            <Divider />
+                                                        </Box>
+                                                    </Box>
                                                 </Box>
                                             </Box>
-                                        </Box>
-                                    </Box>
-                                )
-                            })}
-                        </>
-                    )}
-                    </Container>
-                </>
-    )}
-        </section >
+                                        )
+                                    })}
+                                </>
+                            )}
+                        </div>
+                    </>
+                )}
+            </div >
+        </Container>
     )
 }
 

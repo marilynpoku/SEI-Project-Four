@@ -1,61 +1,56 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import ProductCarousel from '../utilities/ProductCarousel'
-import { useParams} from 'react-router-dom'
-import ReviewForm from '../utilities/ReviewForm'
-// import Basket from '../utilities/Basket'
-
-
-// Layout and styling imports
-import { Container, Heading, Stat, StatNumber, Text, Box, Divider } from '@chakra-ui/react'
-import  Button from 'react-bootstrap/Button'
+import ProductGrid from '../utilities/ProductGrid'
+import { useParams } from 'react-router-dom'
+import ReviewForm from '../review/ReviewForm'
+import Review from '../review/Review'
+import { Container, Heading, Stat, StatNumber, Text, Box,} from '@chakra-ui/react'
+import Button from 'react-bootstrap/Button'
 import { BsHeartFill } from "react-icons/bs";
 import { BsBagDashFill } from "react-icons/bs";
-
-
 
 
 const SingleProduct = () => {
 
     const [productData, setproductData] = useState('')
-    const {id } = useParams()
-    const [ review, setReview ] = useState({ text:'', product: `${id}`})
-    const [basket, setBasket ] = useState([])
+    const { id } = useParams()
+    const [review, setReview] = useState({ text: '', product: `${id}` })
+    const [basket, setBasket] = useState([])
 
     // Get product data
-    const getData = useCallback(async () =>  { 
+    const getData = useCallback(async () => {
         try {
             const { data } = await axios.get(`/api/products/${id}`)
-            console.log('data ->', data)
+            console.log('product data ->', data)
             setproductData(data)
         } catch (error) {
-            console.log('error ->', error)
+            console.log('product data error ->', error)
         }
-    },[id])
+    }, [id])
 
-    useEffect(()=> {
+    useEffect(() => {
         getData()
-    },[getData, id])
+    }, [getData, id])
 
 
 
-    const getBasketFromLocalStorage = () => {
-        window.localStorage.getItem('basket') 
-    } 
+    // const getBasketFromLocalStorage = () => {
+    //     window.localStorage.getItem('basket')
+    // }
 
 
     const addToBasket = () => {
         console.log('Add to basket function')
         console.log('basket', basket)
-        console.log('productData',productData)
-        setBasket([...basket, {...productData}])
+        console.log('productData', productData)
+        setBasket([...basket, { ...productData }])
 
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         window.localStorage.setItem('basket', JSON.stringify(basket))
-    },[basket])
+    }, [basket])
 
     // const removeFromBasket = ( productToRemove ) => {
     //     setBasket(basket.filter((productData) => productData !== productToRemove)
@@ -63,43 +58,57 @@ const SingleProduct = () => {
     // }
 
 
-    
     return (
         <>
-            <ProductCarousel productData={productData}/>
-            <Container className='produdct-details'>
-                <Heading as='h2' size='xl' mx={30}>{productData.name} </Heading>
-                <Box ml={330}><BsHeartFill className='m-30' mx={30}/> {productData.likes}</Box>
-                    <Heading as='h5' size='sm' mx={30}>{productData.brand}</Heading>
-                <Heading as='h6' size='xs' mx={30} >Product Details</Heading>
-                <Text size='sm' fontSize='15px' textAlign='justify' mx={30} my={30}>{productData.product_details}</Text>
-                <Stat>
-                <StatNumber mx={30} fontSize='15px' >£{productData.price}</StatNumber>
-                </Stat>
+            <Container mt='5vh' display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                <div className='content-container'>
+
+                    <div className='content-left'>
+                        <ProductCarousel productData={productData} />
+                        <ProductGrid productData={productData} />
+                    </div>
+
+                    <div className='content-right'>
+                        <Container maxWidth='400px' display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                            <Box>
+                                <Heading as='h2' size='xl' mx={30}>{productData.name} </Heading>
+                                <Box ml={330}><BsHeartFill className='m-30' mx={30} /> {productData.likes}</Box>
+                                <Heading as='h5' size='sm' mx={30}>{productData.brand}</Heading>
+                                <Heading as='h6' size='xs' mx={30} >Product Details</Heading>
+                                <Text size='sm' fontSize='15px' textAlign='justify' mx={30} my={30}>{productData.product_details}</Text>
+                                <Stat>
+                                    <StatNumber mx={30} fontSize='15px' >£{productData.price}</StatNumber>
+                                </Stat>
+                                <Box className='button-container'>
+                                    <Button onClick={addToBasket} className='btn btn-dark' size='sm'><BsBagDashFill />  Add</Button>
+                                    <Button className='btn btn-dark'>Go to basket ({basket.length})</Button>
+                                </Box>
+                            </Box>
+                            <Box>
+                                {productData && (
+                                    <Container className='reviews-container' border={'1px solid white'} bg={{ base: 'whitesmoke', md: 'white' }}>
+                                        <Heading mt={25} className='text-center' as='h4' size='md'>Reviews ({productData.reviews.length})</Heading>
+                                        <ReviewForm id={id} refreshData={getData} review={review} setReview={setReview} />
+                                        {productData.reviews.sort(
+                                            (a, b) =>
+                                                new Date(b.created_at) - new Date(a.created_at)
+                                        )
+                                            .map((review) => {
+                                                return (
+                                                    <Review key={review.id} refreshData={getData} review={review} />
+                                                )
+                                            })}
+                                    </Container>
+                                )
+                                }
+                            </Box>
+                        </Container>
+                    </div>
+
+                </div>
             </Container>
-            <Container className='button-container'>
-                <Button onClick={addToBasket} className='btn btn-dark' size='sm'><BsBagDashFill/>  Add</Button>
-                <Button className='btn btn-dark'>Go to basket ({basket.length})</Button>
-            </Container>
-            {productData && (
-            <Container className='reviews-container' border={'1px solid white'} bg={'whitesmoke'}>
-                <Heading mt={25} className='text-center' as='h4' size='md'>Reviews ({productData.reviews.length})</Heading>
-                <ReviewForm id={id} refreshData={getData} review={review} setReview={setReview}/>
-                {productData.reviews.map((review, i ) => {
-                    return (
-                        <Box  my={30} mx={30} key={i}>
-                            <Text>{review.owner.username}</Text>
-                            <Text>{review.text}</Text>
-                            <Divider/>
-                        </Box>
-                    )
-                })
-                }
-            </Container>
-            )
-            }
         </>
-    )  
+    )
 }
 
 export default SingleProduct

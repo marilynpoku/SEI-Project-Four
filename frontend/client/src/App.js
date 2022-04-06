@@ -1,6 +1,4 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter,  } from 'react-router-dom'
-
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 
 // Components
 import NavBar from './components/common/Navbar'
@@ -17,22 +15,22 @@ import Register from './components/auth/Register'
 
 function App() {
 
+
     return (
 
             <Router>
+                <NavBar />
                 <Routes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/products' element={<Products/>} />
                     <Route path='/products/:id' element={<SingleProduct/>} />
                     <Route path='/brand/:id' element={<Brand/>} />
                     <Route path='/article/:id' element={<Article/>} />
-                    <Route path='/profile' element={<Profile/>} />
+                    <Route path='/profile/:id' element={<Profile />} />
                     <Route path='/createArticle' element={<CreateArticle/>} />
                     <Route path='/login' element={<Login/>} />
                     <Route path='/register' element={<Register/>} />
-                    
                 </Routes>
-                <NavBar />
             </Router>
     )
 }

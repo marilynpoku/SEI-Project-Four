@@ -1,101 +1,67 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getTokenFromLocalStorage } from '../auth/helpers.js'
-
-import Form from 'react-bootstrap/Form'
+import { Container, Avatar, Text, Divider, Box } from '@chakra-ui/react'
 import Button from 'react-bootstrap/Button'
 
-import { useNavigate } from 'react-router-dom'
 
-const CreateArticle = () => {
 
+const Profile = () => {
+
+    const { id } = useParams()
+    const [profile, setProfile] = useState([])
     const navigate = useNavigate()
 
-    const [formData, setFormData] = useState({
-        title: '',
-        tagline: '',
-        text: '',
-        image: '',
-        image_extra: '',
-    })
 
-    const [formErrors, setFormErrors] = useState('')
-
-
-    const handleChange = (e) => {
-        if (e.target) {
-            const newObj = { ...formData, [e.target.name]: e.target.value }
-            setFormData(newObj)
-        } else {
-            console.log(e)
-            const arrayOfValues = e.map((formData) => {
-                return formData.owner.username
-            })
-            console.log(arrayOfValues)
-            const newValue = { ...formData, text: arrayOfValues }
-            setFormData(newValue)
+    // Get profile
+    useEffect(() => {
+        const getUserProfile = async () => {
+            const token = getTokenFromLocalStorage()
+            try {
+                const { data } = await axios.get(`/api/auth/profile/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+                setProfile(data)
+                console.log('users profile data', data)
+            } catch (error) {
+                console.log(error.response.data.detail)
+            }
         }
-    }
+        getUserProfile()
+    }, [id])
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+
+    // Delete profile 
+    const deleteProfile = async () => {
         try {
-            const { data } = await axios.post('/api/articles/', formData, {
+            await axios.delete(`/api/auth/profile/${id}`, {
                 headers: {
-                    Authorization: `Bearer ${getTokenFromLocalStorage()}`,
-                },
-            })
-            navigate(`/article/${data.id}`)
-        } catch (err) {
-            console.log(err.response.data.detail)
+                    Authorization: `Bearer ${getTokenFromLocalStorage()}`
+                }
+            }
+            )
+            navigate('/')
+        } catch (error) {
+            console.log(error.response.data.detail)
         }
     }
 
 
     return (
+
         <>
-            <Form onSubmit={handleSubmit}>
-                {/* Title */}
-                <Form.Group>
-                    <Form.Label htmlFor='title'>Title</Form.Label>
-                    <Form.Control required name='title' type='title' placeholder='Article Heading' onChange={handleChange} />
-                </Form.Group>
+            <Container display='flex' flexDir='column' justifyContent='center' alignItems='center'>
+                <Avatar size='2xl' src={profile.profile_image} />
+                <Text fontSize='24px'>{profile.username}</Text>
+                <Divider />
+                <Box display='flex' flexDir='row' justifyContent='center' alignItems='center'>
+                    <Button className='btn btn-profile btn-dark'>Edit</Button>
+                    <Button className='btn btn-profile btn-dark' onClick={deleteProfile}>Delete</Button>
+                </Box>
+            </Container>
 
-                {/* TAGLINE */}
-                <Form.Group>
-                    <Form.Label htmlFor='tagline'>Tagline</Form.Label>
-                    <Form.Control required name='tagline' type='tagline' placeholder='Article Tagline' onChange={handleChange} />
-                </Form.Group>
-
-                {/* TEXT */}
-                <Form.Group>
-                    <Form.Label htmlFor='text'>Article Text</Form.Label>
-                    <Form.Control required as='textarea' name='text' type='text' onChange={handleChange} />
-                </Form.Group>
-
-                {/* IMAGE 1 */}
-                <Form.Group>
-                    <Form.Label htmlFor='image'>Image</Form.Label>
-                    <Form.Control required name='image' type='file' placeholder='image' onChange={handleChange} />
-                </Form.Group>
-
-                {/* IMAGE 2 */}
-                <Form.Group>
-                    <Form.Label htmlFor='image'>Image</Form.Label>
-                    <Form.Control required name='image_extra' type='file' placeholder='second image' onChange={handleChange} />
-                </Form.Group>
-
-                {/* SUBMIT BUTTON */}
-                <Form.Group className='mt-4 text-center'>
-                    <Button type='submit' onClick={handleSubmit}>
-                        Create Article
-                    </Button>
-                </Form.Group>
-
-            </Form>
         </>
     )
 }
 
-export default CreateArticle
 
+export default Profile

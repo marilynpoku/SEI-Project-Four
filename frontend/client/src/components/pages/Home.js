@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Nav from 'react-bootstrap/Nav'
-import { Heading, Image, Box, Text} from '@chakra-ui/react'
-import { userIsAuthenticated } from '../auth/helpers'
+import { Heading, Image, Box, Text, Container } from '@chakra-ui/react'
 import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
-
 
 
 const Home = () => {
@@ -15,11 +11,9 @@ const Home = () => {
     const [productsData, setProductsData] = useState([])
     const [productDrops, setProductDrops] = useState([])
 
-    const handleLogout = () => {
-        window.localStorage.removeItem('otisx-login-token')
-    }
+ 
 
-    // Generates three random articles
+    // Generates two random articles
     useEffect(() => {
         const getData = async () => {
             try {
@@ -27,7 +21,7 @@ const Home = () => {
                 console.log(' article data ->', data)
 
                 let randomArticle = []
-                while (randomArticle.length < 3) {
+                while (randomArticle.length < 2) {
                     randomArticle.push((data[Math.floor(Math.random() * data.length)]))
                     randomArticle = [...new Set(randomArticle)]
                 }
@@ -70,38 +64,16 @@ const Home = () => {
 
 
     return (
-        <>
-        <header className='home-header'>
-        <Heading as='h1' size='4xl' className='text-center' isTruncated>OTISX</Heading>
-            {userIsAuthenticated() ?
-            <>
-                <Nav className='justify-content-end'>
-                    <Nav.Item>
-                        <Nav.Link className='logout' onClick={handleLogout}>Logout</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </>
-            :
-            <Nav className='justify-content-end' >
-                <Nav.Item>
-                    <Nav.Link className='login'href='/login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link className='join-us' href='/register'>Join Us</Nav.Link>
-                </Nav.Item>
-            </Nav>
-        }
-        </header>
-            
-            <Container className='articles-container container-sm' >
+        <>  
+            <Container display='flex' flexDir={{base: 'column', md: 'row'}} flexWrap='wrap' justifyContent='center' alignItems='center' >
                 {randomArticles &&
                     randomArticles.map((article, i) => {
                         return (
-                            <Box className='article-container' key={i}>
+                            <Box display='flex' flexDir='column' justifyContent='center' alignItems='center' maxWidth='700px' maxHeight='700px' margin='2px' key={i}>
                             <Link className='article-link' to={`/article/${article.id}`}>
-                                <Image borderRadius='full' boxSize='100%' src={article.image} alt={article.name} />
-                                <h6 className='text-center'>ARTICLE</h6>
-                                <h3 className='text-center'>{article.tagline}</h3>
+                                <Image borderRadius='full' boxSize='100%' display='block' objectFit='cover' objectPosition='top' src={article.image} alt={article.name} maxWidth='700px' maxHeight='467px' />
+                                <Text fontSize='16px' textAlign='center'>ARTICLE</Text>
+                                <Text fontSize='23px' textAlign='center' >{article.tagline}</Text>
                             </Link>
                             </Box>
                         )
@@ -109,19 +81,20 @@ const Home = () => {
                 }
             </Container>
 
-            <Heading className='text-center releases-heading' as='h2' size='3xl' isTruncated>NEW RELEASES </Heading>
+            <Heading className='text-center releases-heading' as='h2' size='3xl' mt='6vh' isTruncated>NEW RELEASES </Heading>
+            <Text textAlign='center' mb='4vh'> The latest new releases all sneaker heads should look out for.</Text>
 
-            <Container className='upcoming-drops-container container-sm '>
+            <Container display='flex' flexWrap='wrap' justifyContent='center' alignItems='center' width='100%' margin='0 auto'>
                     {productDrops &&
                         productDrops.map((product, i) => {
                             return (
-                                    <Box  key={i} className='card-container' style={{ width: '390px', height: '490px' }}>
-                                    <Link className='product-link' to={`products/${product.id}`}>
-                                        <Card.Img className='card-image ' variant='top' src={product.image_right} alt={product.name} max-width='380px' height='380px' />
+                                    <Box  key={i} className='card-container' style={{ width: '360px', height: '460px' }}>
+                                        <Link className='product-link' to={`products/${product.id}`}>
+                                            <Card.Img className='card-image ' variant='top' src={product.image_right} alt={product.name} max-width='350px' height='350px' />
                                         </Link>
-                                        <Card.Title>{product.name}</Card.Title>
-                                        <Text>Draw opens: {new Date(product.release_date).toLocaleString('uk')}</Text>
-                                        <Text>£{product.price}</Text>
+                                            <Card.Title>{product.name}</Card.Title>
+                                            <Text>Draw opens: {new Date(product.release_date).toLocaleString('uk')}</Text>
+                                            <Text>£{product.price}</Text>
                                     </Box>
                             )
                         })

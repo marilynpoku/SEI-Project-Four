@@ -1,53 +1,65 @@
-import React, { useEffect } from 'react'
-import { AiFillHome } from "react-icons/ai"
-import { RiUserFill } from "react-icons/ri";
-import { GiConverseShoe } from "react-icons/gi";
-import Button from 'react-bootstrap/Button'
-import Nav from 'react-bootstrap/Nav'
-
-import { userIsAuthenticated } from '../auth/helpers';
-
+import React from 'react'
+import { userIsAuthenticated, getPayload } from '../auth/helpers'
+import { Link, useNavigate } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav, { } from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+import { Heading } from '@chakra-ui/react'
 
 
-const NavBar = () => {
+
+const NavBar = ( userDeleted ) => {
+
+
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        window.localStorage.removeItem('otisx-login-token')
+        navigate('/')
+    }
+
+    const payload = getPayload()
+
 
     return (
         <>
-            {userIsAuthenticated() ? (
-                <>
-                <Nav className='navbar '>
-                    <Button className='btn btn-dark' href='/' >
-                        <AiFillHome />
-                    </Button>
-
-                    <Button className='btn btn-dark' href='/products'>
-                        <GiConverseShoe />
-                    </Button>
-
-
-                    <Button className='btn btn-dark' href='/profile'>
-                        <RiUserFill />
-                    </Button>
-                </Nav>
-                </>
-            ) : (
-                <>
-                <Nav className='navbar'>
-                    <Button className='btn btn-dark' href='/' >
-                        <AiFillHome />
-                    </Button>
-
-                    <Button className='btn btn-dark' href='/products'>
-                        <GiConverseShoe />
-                    </Button>
-
-
-                    <Button className='btn btn-dark'href='/login'>
-                        <RiUserFill />
-                    </Button>
-                </Nav>
-                </>
-            )}
+            <header>
+                <Navbar expand='sm'>
+                    <Container>
+                        <Navbar.Brand>
+                            <Link to='/'><Heading as='h1' size='4xl' className='text-center'>OTISX</Heading></Link>
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls='basic-navbar-nav"' />
+                        <Navbar.Collapse className='justify-content-end'>
+                            <Nav.Item>
+                                <Link to='/products'>All Trainers</Link>
+                            </Nav.Item>
+                            {userIsAuthenticated() ?
+                                <>
+                                    <Nav.Item>
+                                        <Link to='/createArticle'>Post Article</Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Link to={`/profile/${payload.sub}`}>Profile</Link>
+                                    </Nav.Item>
+                                    <Nav.Item onClick={handleLogout}>
+                                        <div className='logout'>Logout</div>
+                                    </Nav.Item>
+                                </>
+                                :
+                                <>
+                                    <Nav.Item>
+                                        <Link to='/register'>Join Us</Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Link to='/login'>Login</Link>
+                                    </Nav.Item>
+                                </>
+                            }
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </header>
         </>
     )
 }

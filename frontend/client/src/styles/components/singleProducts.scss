@@ -4,10 +4,10 @@
 }
 
 .carousel-img {
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    object-position: top;
     overflow: hidden;
-    min-height: 430px;
+    height: 100%;
 }
 
 .button-container{
@@ -22,3 +22,45 @@
     }
 }
 
+.productGrid-container {
+    display: none;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+}
+
+.content-right {
+    max-width: 400px;
+}
+
+.content-left {
+    max-width: 800px;
+}
+
+
+@media screen and (min-width:960px) {
+    .carousel {
+        display: none;
+    }
+    .productGrid-container {
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+}
