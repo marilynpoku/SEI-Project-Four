@@ -54,7 +54,7 @@ const Profile = () => {
                 <Text fontSize='24px'>{profile.username}</Text>
                 <Divider />
                 <Box display='flex' flexDir='row' justifyContent='center' alignItems='center'>
-                    <Button className='btn btn-profile btn-dark'>Edit</Button>
+                    {/* <Button className='btn btn-profile btn-dark'>Edit</Button> */}
                     <Button className='btn btn-profile btn-dark' onClick={deleteProfile}>Delete</Button>
                 </Box>
             </Container>
