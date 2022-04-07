@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Button, Modal, ModalContent, ModalBody, ModalOverlay, Container, Box } from '@chakra-ui/react'
-import { useDisclosure } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+import { Container, Heading } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+
 
 const Register = () => {
 
@@ -30,20 +30,6 @@ const Register = () => {
         password: '',
         password_confirmation: '',
     })
-
-    const OverlayTwo = () => {
-        return (
-            <ModalOverlay
-                bg='none'
-                backdropFilter='auto'
-                backdropInvert='20%'
-                backdropBlur='2px'
-            />
-        )
-    }
-
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const [overlay, setOverlay] = React.useState(<OverlayTwo />)
 
 
     const handleChange = (e) => {
@@ -71,85 +57,54 @@ const Register = () => {
 
     return (
         <>
-            <Container display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
-                <Button
-                    ml='4'
-                    onClick={() => {
-                        setOverlay(<OverlayTwo />)
-                        onOpen()
-                    }}
-                > Sign up
-                </Button>
+            <Container display='flex' flexDir='center' justifyContent='center' alignItems='center'>
+                <Form className='auth-form mt-4' onSubmit={handleSubmit}>
+                    <Heading as='h5' size='sm' mt='5vh' textAlign='center'>Your account for everthing Otisx</Heading>
+                    {/* First name */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='text' name='first_name' placeholder='First name' defaultValue={formData.first_name} />
+                        {formErrors.first_name && <Form.Text>{formErrors.first_name}</Form.Text>}
+                    </Form.Group>
+                    {/* Last name */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='text' name='last_name' placeholder='Last name' defaultValue={formData.last_name} />
+                        {formErrors.last_name && <Form.Text>{formErrors.last_name}</Form.Text>}
+                    </Form.Group>
+                    {/* Username */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='text' name='username' placeholder='Username' defaultValue={formData.username} />
+                        {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
+                    </Form.Group>
+                    {/* Email */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='email' name='email' placeholder='Email' defaultValue={formData.email} />
+                        {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
+                    </Form.Group>
+                    {/* Profile image */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='file' name='profile_image' placeholder='Add a profile image' defaultValue={formData.profile_image} />
+                        <Form.Text className='text-muted form-text'>
+                            Add a profile image.
+                        </Form.Text>
+                        {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
+                    </Form.Group>
+                    {/* Password */}
+                    <Form.Group className='mb-1'>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='password' name='password' placeholder='Password' defaultValue={formData.password} />
+                        {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
+                    </Form.Group>
+                    {/* Password Confirmation */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='password' name='password_confirmation' placeholder='Confirm Password' defaultValue={formData.password_confirmation} />
+                        {formErrors.password_confirmation && <Form.Text>{formErrors.password_confirmation}</Form.Text>}
+                    </Form.Group>
+                    {/* Submit */}
+                    <Form.Group className='text-center mt-2 mb-4'>
+                        <Button className='btn btn-dark' type='submit'>Submit</Button>
+                    </Form.Group>
+                    <p className='text-muted'>Already a member? <Link className='login-link' to={`/login`}>Login.</Link></p>
+                </Form>
             </Container>
-
-            <Modal isCentered isOpen={isOpen} onClose={onClose}>
-                {overlay}
-                <ModalContent>
-                    {/* <ModalCloseButton class /> */}
-
-                    {/* REGISTER FORM */}
-
-                    <ModalBody pb={6}>
-                        <Box display='flex' flexDir='column' justifyContent='center' alignItems='center'>
-                            <Form>
-                                <Row className='text-center'>
-                                    <Col md={6}>
-                                        <Form.Group>
-                                            <Form.Label className='form-label-text'>First Name</Form.Label>
-                                            <Form.Control onChange={handleChange} type='text' name='first_name' placeholder='First Name' defaultValue={formData.first_name} />
-                                            {formErrors.first_name && <Form.Text>{formErrors.first_name}</Form.Text>}
-                                        </Form.Group>
-
-                                        <Form.Group>
-                                            <Form.Label className='form-label-text'>Last name</Form.Label>
-                                            <Form.Control onChange={handleChange} type='text' name='last_name' placeholder='Last Name' defaultValue={formData.last_name} />
-                                            {formErrors.last_name && <Form.Text>{formErrors.last_name}</Form.Text>}
-                                        </Form.Group>
-
-
-                                        <Form.Group mt={1}>
-                                            <Form.Label className='form-label-text'>Email</Form.Label>
-                                            <Form.Control onChange={handleChange} type='email' name='email' placeholder='Email' defaultValue={formData.email} />
-                                            {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
-                                        </Form.Group>
-
-
-                                        <Form.Group mt={1}>
-                                            <Form.Label className='form-label-text'>Username</Form.Label>
-                                            <Form.Control onChange={handleChange} type='text' name='username' placeholder='username' defaultValue={formData.username} />
-                                            {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
-                                        </Form.Group>
-
-
-                                        <Form.Group mt={1}>
-                                            <Form.Label className='form-label-text'>Password</Form.Label>
-                                            <Form.Control onChange={handleChange} type='password' name='password' placeholder='password' defaultValue={formData.password} />
-                                            {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
-                                        </Form.Group>
-
-                                        <Form.Group mt={1}>
-                                            <Form.Label className='form-label-text'>Password Confirmation</Form.Label>
-                                            <Form.Control onChange={handleChange} type='password' name='password_confirmation' placeholder='password confirmation' defaultValue={formData.password_confirmation} />
-                                            {formErrors.password_confirmation && <Form.Text>{formErrors.password_confirmation}</Form.Text>}
-                                        </Form.Group>
-
-                                        <Form.Group mt={1}>
-                                            <Form.Label className='form-label-text'>Profile Image</Form.Label>
-                                            <Form.Control onChange={handleChange} type='file' name='profile_image' placeholder='Profile Image' defaultValue={formData.profile_image} />
-                                            {formErrors.profile_image && <Form.Text>{formErrors.profile_image}</Form.Text>}
-                                        </Form.Group>
-                                    </Col>
-
-                                    <Container className='button-container'>
-                                        <Button className='btn-light btn' onClick={handleSubmit}>Submit</Button>
-                                    </Container>
-
-                                </Row>
-                            </Form>
-                        </Box>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
         </>
     )
 }

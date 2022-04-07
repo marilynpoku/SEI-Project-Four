@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Button, Modal, ModalContent, ModalBody, ModalOverlay, Box, Container } from '@chakra-ui/react'
-import { useDisclosure } from '@chakra-ui/react'
+import  {Link } from 'react-router-dom'
+import { Container, Heading } from '@chakra-ui/react'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+
 
 const Login = () => {
 
@@ -41,68 +41,28 @@ const Login = () => {
         }
     }
 
-
-    const OverlayTwo = () => {
-        return (
-            <ModalOverlay
-                bg='none'
-                backdropFilter='auto'
-                backdropInvert='20%'
-                backdropBlur='2px'
-            />
-        )
-    }
-
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const [overlay, setOverlay] = React.useState(<OverlayTwo />)
-
     return (
         <>
-            <Container display='flex' justifyContent='center' alignItems='center'>
-                <Button
-                    ml='4'
-                    onClick={() => {
-                        setOverlay(<OverlayTwo />)
-                        onOpen()
-                    }}
-                > Login </Button>
+        <Container display='flex' flexDir='center' justifyContent='center' alignItems='center'>
+                <Form className='auth-form mt-4' onSubmit={handleSubmit}>
+                    <Heading as='h5' size='sm' mt='5vh' textAlign='center'>Your account for everthing Otisx</Heading>
+                    {/* Username */}
+                    <Form.Group>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='text' name='username' placeholder='Username' defaultValue={formData.username} />
+                        {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
+                    </Form.Group>
+                    {/* Password */}
+                    <Form.Group className='mb-1'>
+                        <Form.Control className='auth-form-control' onChange={handleChange} type='password' name='password' placeholder='Password' defaultValue={formData.password} />
+                        {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
+                    </Form.Group>
+                    {/* Submit */}
+                    <Form.Group className='text-center mt-2 mb-4'>
+                        <Button className='btn btn-dark' type='submit'>Submit</Button>
+                    </Form.Group>
+                    <p className='text-muted'>Not a member? <Link className='register-link' to={`/register`}>Join Us.</Link></p>
+                </Form>
             </Container>
-
-            <Modal isCentered isOpen={isOpen} onClose={onClose}>
-                {overlay}
-                <ModalContent>
-
-
-                    {/* REGISTER FORM */}
-
-                    <ModalBody pb={6}>
-                        <Form>
-                            <Box display='flex' flexDir='column' justifyContent='center' alignItems='center'>
-                                <Row className='text-center'>
-                                    <Col md={6}>
-                                        <Form.Group mt={4}>
-                                            <Form.Label>Username</Form.Label>
-                                            <Form.Control onChange={handleChange} type='text' name='username' placeholder='username' defaultValue={formData.username} />
-                                            {formErrors.username && <Form.Text>{formErrors.username}</Form.Text>}
-                                        </Form.Group>
-                                        <Form.Group mt={4}>
-                                            <Form.Label>Password</Form.Label>
-                                            <Form.Control onChange={handleChange} type='password' name='password' placeholder='password' defaultValue={formData.password} />
-                                            {formErrors.password && <Form.Text>{formErrors.password}</Form.Text>}
-                                        </Form.Group>
-                                    </Col>
-
-                                    <Container className='button-container' display='flex' flexDir='column' justifyContent='center' alignItems='center'>
-                                        <Button className='btn-light btn' onClick={handleSubmit}>Submit</Button>
-                                    </Container>
-
-                                </Row>
-                            </Box>
-                        </Form>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
-
         </>
     )
 }
