@@ -1,0 +1,13 @@
+{
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#a70000",
+      "titleBar.activeBackground": "#a70000",
+      "titleBar.inactiveBackground": "#a70000",
+      "statusBar.foreground": "#000",
+      "titleBar.inactiveForeground": "#000",
+      "titleBar.activeForeground": "#000"
+    },
+    "window.title": "BACKEND_OtisX",
+    "compile-hero.disable-compile-files-on-did-save-code": true
+  }
+  

@@ -1,0 +1,122 @@
+[
+    {
+        "model": "jwt_auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$Ps07HffOTlfsuR8cK63VEC$NM2GcC2az/xSrNdTprosqQYlrPklwWheprFEa2S877E=",
+            "last_login": null,
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-03-06T14:25:22Z",
+            "email": "ben@mail.com",
+            "username": "Ben",
+            "first_name": "Ben",
+            "last_name": "Riley",
+            "profile_image": "https://www.w3schools.com/howto/img_avatar.png",
+            "created_at": "2022-03-06T14:25:22.460Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "jwt_auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$sQpkdMHzYKirDOlv3EaZUO$sV/g88NWfvlkzC2sOzFyjc1hD/dwSa9HH/o9VI4CAYQ=",
+            "last_login": "2022-03-06T14:44:28Z",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-03-06T14:44:14Z",
+            "email": "lisa@mail.com",
+            "username": "Lisa",
+            "first_name": "Lisa",
+            "last_name": "Pope",
+            "profile_image": "djcvchcicobcb",
+            "created_at": "2022-03-06T14:44:14.787Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "jwt_auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$Bk11h9hxvPORjxw2xtyual$kY2ECCGAQPp9nVeoLyc/mwzxPAFiqNcyuAIlz7phtBg=",
+            "last_login": null,
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-03-06T14:46:05Z",
+            "email": "aa@mail.com",
+            "username": "Aj",
+            "first_name": "Aj",
+            "last_name": "Reed",
+            "profile_image": "ecekwbvkwb",
+            "created_at": "2022-03-06T14:46:05.396Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "jwt_auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$56eE7AX4dnDT4Syh4GwSii$KxkFnLiGq+uZv7f04mTqVm9k/j1xePnZ9WGa34inTCU=",
+            "last_login": null,
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-03-06T14:46:16Z",
+            "email": "aaa@mail.com",
+            "username": "Aliyah",
+            "first_name": "Aliyah",
+            "last_name": "Stewart",
+            "profile_image": "ecekwbvkwb",
+            "created_at": "2022-03-06T14:46:16.003Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "jwt_auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$56eE7AX4dnDT4Syh4GwSii$KxkFnLiGq+uZv7f04mTqVm9k/j1xePnZ9WGa34inTCU=",
+            "last_login": null,
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-03-07T10:58:04Z",
+            "email": "henri@mail.com",
+            "username": "Henri",
+            "first_name": "Henri",
+            "last_name": "Mason",
+            "profile_image": "djcvchcicobcb",
+            "created_at": "2022-03-07T10:59:15.964Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "jwt_auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$56eE7AX4dnDT4Syh4GwSii$KxkFnLiGq+uZv7f04mTqVm9k/j1xePnZ9WGa34inTCU=",
+            "last_login": null,
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-03-07T11:00:21Z",
+            "email": "brooke@mail.com",
+            "username": "Brooke",
+            "first_name": "Brooke",
+            "last_name": "Carter",
+            "profile_image": "dvdvrv",
+            "created_at": "2022-03-07T11:10:46.914Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

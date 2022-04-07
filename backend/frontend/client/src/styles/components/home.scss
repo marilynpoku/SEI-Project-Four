@@ -1,0 +1,36 @@
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
+    min-width: 380px;
+    min-height: 380px;
+    margin: 2px;
+}
+
+.card {
+    border :none !important;
+}
+
+a.product-link {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+}
+
+a.article-link {
+    text-decoration: none !important;
+    color: black;
+}
+
+.article-container {
+    padding-bottom:18px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
