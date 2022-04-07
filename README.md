@@ -153,7 +153,7 @@ I really enjoyed collaborating with Mehtaab on the backend and building our unde
 ### Future improvements 
 
 - Adding error handling to all forms and improved feedback such as spinners when there are delays in loading the data
-- Improved styling for mobile up and the forms
+- Improved styling for mobile up
 - Complete the intended functionality on the profile page by adding the users favourites and articles posted by the user and also allow the users to edit their profile. The backend is set up for this functionality
 
 
