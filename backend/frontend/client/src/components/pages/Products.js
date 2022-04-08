@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Box, Heading, Text, Stack } from '@chakra-ui/react'
+import { Box, Text, Stack } from '@chakra-ui/react'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'

@@ -1,3 +1,5 @@
+
+
 """
 Django settings for project project.
 
@@ -142,3 +144,4 @@ REST_FRAMEWORK = {
         'jwt_auth.authentication.JWTAuthentication'
     ]
 }
+
