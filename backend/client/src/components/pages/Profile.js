@@ -19,7 +19,7 @@ const Profile = () => {
         const getUserProfile = async () => {
             const token = getTokenFromLocalStorage()
             try {
-                const { data } = await axios.get(`/api/auth/profile/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+                const { data } = await axios.get(`/api/auth/profile/${id}/`, { headers: { Authorization: `Bearer ${token}` } })
                 setProfile(data)
                 console.log('users profile data', data)
             } catch (error) {
@@ -33,7 +33,7 @@ const Profile = () => {
     // Delete profile 
     const deleteProfile = async () => {
         try {
-            await axios.delete(`/api/auth/profile/${id}`, {
+            await axios.delete(`/api/auth/profile/${id}/`, {
                 headers: {
                     Authorization: `Bearer ${getTokenFromLocalStorage()}`
                 }

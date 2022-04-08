@@ -21,7 +21,7 @@ const Review = ({ review, refreshData }) => {
     // Delete a review 
     const deleteReview = async () => {
         try {
-            await axios.delete(`/api//reviews/${review.id}`, {
+            await axios.delete(`/api/reviews/${review.id}/`, {
                 headers: {
                     Authorization: `Bearer ${getTokenFromLocalStorage()}`
                 }

@@ -13,7 +13,7 @@ const Brand = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get(`/api/brands/${id}`)
+                const { data } = await axios.get(`/api/brands/${id}/`)
                 console.log('BRAND DATA', data)
                 setBrands(data)
             } catch (error) {

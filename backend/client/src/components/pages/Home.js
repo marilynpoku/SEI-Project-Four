@@ -17,7 +17,7 @@ const Home = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get('/api/articles')
+                const { data } = await axios.get('/api/articles/')
                 console.log(' article data ->', data)
 
                 let randomArticle = []
@@ -39,7 +39,7 @@ const Home = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get('/api/products')
+                const { data } = await axios.get('/api/products/')
                 console.log(' product data ->', data)
                 setProductsData(data)
             } catch (error) {

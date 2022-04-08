@@ -21,7 +21,7 @@ const SingleProduct = () => {
     // Get product data
     const getData = useCallback(async () => {
         try {
-            const { data } = await axios.get(`/api/products/${id}`)
+            const { data } = await axios.get(`/api/products/${id}/`)
             console.log('product data ->', data)
             setproductData(data)
         } catch (error) {

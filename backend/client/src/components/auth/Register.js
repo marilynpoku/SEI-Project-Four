@@ -59,7 +59,7 @@ const Register = () => {
         <>
             <Container display='flex' flexDir='center' justifyContent='center' alignItems='center'>
                 <Form className='auth-form mt-4' onSubmit={handleSubmit}>
-                    <Heading as='h5' size='sm' mt='5vh' textAlign='center'>Your account for everthing Otisx</Heading>
+                    <Heading as='h5' size='sm' mt='5vh' textAlign='center'>Your account for everything Otisx</Heading>
                     {/* First name */}
                     <Form.Group>
                         <Form.Control className='auth-form-control' onChange={handleChange} type='text' name='first_name' placeholder='First name' defaultValue={formData.first_name} />

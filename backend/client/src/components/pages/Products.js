@@ -18,7 +18,7 @@ const Products = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get('/api/products')
+                const { data } = await axios.get('/api/products/')
                 console.log('data ->', data)
                 setproductsData(data)
             } catch (error) {

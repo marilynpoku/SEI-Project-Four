@@ -28,7 +28,7 @@ const Article = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get(`/api/articles/${id}`)
+                const { data } = await axios.get(`/api/articles/${id}/`)
                 console.log('article DATA', data)
                 setArticles(data)
             } catch (error) {
@@ -64,7 +64,7 @@ const Article = () => {
             setComments({ ...comments, text: '' })
             const getSingleArticles = async () => {
                 try {
-                    const { data } = await axios.get(`/api/articles/${id}`)
+                    const { data } = await axios.get(`/api/articles/${id}/`)
                     setArticles(data)
                 } catch (err) {
                     setHasError(err.response.data.message)
