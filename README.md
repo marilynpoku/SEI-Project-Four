@@ -3,7 +3,7 @@
 
 # General Assembly: Software Engineering Immersive
 
-## Otisx
+## OTISX
 
 https://otisx.herokuapp.com/
 
