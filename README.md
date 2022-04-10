@@ -78,7 +78,7 @@ The wireframe was designed using Balsamiq.
 
 #### Relationships
 
-We planned our different relationships using quick base diagrams. Our app includes a few one to many relationships. For example the product has a one to many relationship with the product comments whereby a single product could have more than one comment.
+We planned our different relationships using quick base diagrams. Our app includes a few one to many relationships. For example the products model has a one to many relationship with the product comments whereby a single product could have more than one comment.
 
 ![alt text](https://i.imgur.com/RyLdpKv.jpg)
 
