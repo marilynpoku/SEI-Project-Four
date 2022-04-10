@@ -3,6 +3,10 @@
 
 # General Assembly: Software Engineering Immersive
 
+## Otisx
+
+https://otisx.herokuapp.com/
+
 ### Overview
 
 My final project at GA. The backend was built using Python, Django and PostgreSQL and React for the frontend. The app was created to resemble a sneaker blog site for the latest sneaker drops and articles posts. Users can view the latest sneaker drops, view articles and create their own articles. The app is intended for mobile use. 
